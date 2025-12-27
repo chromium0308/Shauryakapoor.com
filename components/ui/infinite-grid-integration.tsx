@@ -19,7 +19,7 @@ const InfiniteGridPage: React.FC = () => {
             Welcome!
           </h1>
           <p className="text-lg md:text-xl font-medium text-muted-foreground w-full text-center mx-auto">
-            I&apos;m Shaurya an Engineering student who loves to fabricate his ideas
+            I&apos;m Shaurya, an Engineering student who loves to fabricate his ideas.
           </p>
         </div>
         
