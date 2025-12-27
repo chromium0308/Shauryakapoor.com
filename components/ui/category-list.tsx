@@ -32,7 +32,7 @@ export const CategoryList = ({
   const [hoveredItem, setHoveredItem] = useState<string | number | null>(null);
 
   return (
-    <div className={cn("w-full bg-background text-foreground p-8", className)}>
+    <div className={cn("w-full bg-transparent text-foreground p-8", className)}>
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
@@ -59,11 +59,11 @@ export const CategoryList = ({
             >
               <div
                 className={cn(
-                  "relative overflow-hidden border bg-card transition-all duration-300 ease-in-out cursor-pointer",
+                  "relative overflow-hidden border bg-transparent transition-all duration-300 ease-in-out cursor-pointer",
                   // Hover state styles
                   hoveredItem === category.id
                     ? 'h-32 border-primary shadow-lg shadow-primary/20 bg-primary/5'
-                    : 'h-24 border-border hover:border-primary/50'
+                    : 'h-24 border-border/30 hover:border-primary/50'
                 )}
               >
                 {/* Corner brackets that appear on hover */}

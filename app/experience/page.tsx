@@ -108,7 +108,7 @@ export default function ExperiencePage() {
             {/* Left Column - Languages & Education Summary */}
             <div className="lg:col-span-1 space-y-8">
               {/* Languages */}
-              <div className="bg-card/50 rounded-lg p-6">
+              <div className="bg-transparent rounded-lg p-6 border border-border/30">
                 <div className="flex items-center gap-2 mb-4">
                   <Languages className="w-5 h-5 text-primary" />
                   <h2 className="text-xl font-bold">Languages</h2>
@@ -124,7 +124,7 @@ export default function ExperiencePage() {
               </div>
 
               {/* Education Summary */}
-              <div className="bg-card/50 rounded-lg p-6">
+              <div className="bg-transparent rounded-lg p-6 border border-border/30">
                 <div className="flex items-center gap-2 mb-4">
                   <GraduationCap className="w-5 h-5 text-primary" />
                   <h2 className="text-xl font-bold">Education</h2>
@@ -147,7 +147,7 @@ export default function ExperiencePage() {
 
             {/* Right Column - Timeline */}
             <div className="lg:col-span-2">
-              <div className="bg-card/50 rounded-lg p-6 md:p-8">
+              <div className="bg-transparent rounded-lg p-6 md:p-8 border border-border/30">
                 <div className="flex items-center gap-2 mb-8">
                   <Briefcase className="w-6 h-6 text-primary" />
                   <h2 className="text-2xl font-bold">Work Experience & Achievements</h2>
@@ -183,8 +183,8 @@ export default function ExperiencePage() {
                           {/* Content */}
                           <div 
                             className={cn(
-                              "bg-background/30 rounded-lg p-4 transition-all duration-300",
-                              isHovered && "bg-background/60"
+                              "bg-transparent rounded-lg p-4 transition-all duration-300 border border-border/20",
+                              isHovered && "bg-background/20 border-border/40"
                             )}
                             style={{
                               boxShadow: isHovered 
