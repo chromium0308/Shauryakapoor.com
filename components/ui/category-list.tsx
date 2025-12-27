@@ -80,9 +80,9 @@ export const CategoryList = ({
                   </>
                 )}
 
-                {/* Technology Tags in Corner */}
+                {/* Technology Tags in Corner - Hidden on mobile */}
                 {category.technologies && category.technologies.length > 0 && (
-                  <div className="absolute top-2 right-2 flex flex-wrap gap-1 max-w-[40%] justify-end z-10">
+                  <div className="hidden md:flex absolute top-2 right-2 flex-wrap gap-1 max-w-[40%] justify-end z-10">
                     {category.technologies.map((tech, idx) => {
                       // Define CAD platforms
                       const cadPlatforms = ['Solidworks', 'Ansys', 'Onshape', 'Open Rocket', 'Excel'];
@@ -127,7 +127,7 @@ export const CategoryList = ({
                     {category.subtitle && (
                       <p
                         className={cn(
-                          "mt-1 transition-all duration-300 text-sm md:text-base",
+                          "hidden md:block mt-1 transition-all duration-300 text-sm md:text-base",
                            hoveredItem === category.id ? 'text-foreground/90' : 'text-muted-foreground'
                         )}
                         style={{
