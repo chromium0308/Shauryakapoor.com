@@ -45,20 +45,20 @@ export const CategoryList = ({
       threshold: 0.5,
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
       // Find the most visible entry
       let mostVisible: IntersectionObserverEntry | null = null;
       let maxRatio = 0;
 
-      entries.forEach((entry) => {
+      for (const entry of entries) {
         if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
           maxRatio = entry.intersectionRatio;
           mostVisible = entry;
         }
-      });
+      }
 
       if (mostVisible) {
-        const itemId = mostVisible.target.getAttribute('data-item-id');
+        const itemId = (mostVisible.target as Element).getAttribute('data-item-id');
         if (itemId) {
           // Convert to number if it's a numeric string to match category.id type
           const numericId = !isNaN(Number(itemId)) ? Number(itemId) : itemId;
@@ -70,16 +70,19 @@ export const CategoryList = ({
       }
     }, observerOptions);
 
+    // Capture refs at the time the effect runs
+    const currentRefs = itemRefs.current;
+    
     // Observe all category items after a short delay to ensure refs are set
     const timeoutId = setTimeout(() => {
-      itemRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.observe(ref);
       });
     }, 100);
 
     return () => {
       clearTimeout(timeoutId);
-      itemRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
       observer.disconnect();
