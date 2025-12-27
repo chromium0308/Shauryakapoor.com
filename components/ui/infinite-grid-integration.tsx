@@ -13,9 +13,9 @@ const InfiniteGridPage: React.FC = () => {
       <Navbar />
 
       {/* Main Content - Moved up a bit */}
-      <div className="flex flex-col items-center justify-center text-center px-4 max-w-3xl mx-auto space-y-6 flex-1 pt-8">
+      <div className="flex flex-col items-center justify-center text-center px-4 max-w-3xl mx-auto space-y-6 flex-1 pt-8 pb-4 md:pb-8">
         <div className="space-y-6 w-full flex flex-col items-center pointer-events-none">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight text-foreground drop-shadow-sm w-[80%] text-center mx-auto" style={{ transform: 'translateX(-27px)' }}>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight text-foreground drop-shadow-sm w-[80%] text-center mx-auto md:translate-x-[-27px]">
             Welcome!
           </h1>
           <p className="text-lg md:text-xl font-medium text-muted-foreground w-full text-center mx-auto">

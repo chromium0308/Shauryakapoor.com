@@ -104,7 +104,7 @@ export default function ProjectsPage() {
   return (
     <InfiniteGridBackground>
       <Navbar />
-      <div className="pt-24 pb-12">
+      <div className="pt-20 md:pt-24 pb-4 md:pb-12">
         <div className="mb-8">
           <CategoryList
             title="Current Projects"

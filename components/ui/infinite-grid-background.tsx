@@ -82,6 +82,7 @@ export const InfiniteGridBackground = ({ children, className }: { children?: Rea
         "relative w-full min-h-screen flex flex-col overflow-hidden bg-background",
         className
       )}
+      style={{ margin: 0, padding: 0 }}
     >
       {/* Layer 1: Subtle background grid (always visible) */}
       <div className="absolute inset-0 z-0 opacity-[0.05]">

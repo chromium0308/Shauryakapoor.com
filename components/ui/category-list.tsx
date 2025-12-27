@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 // Define the type for a single category item
@@ -30,12 +30,67 @@ export const CategoryList = ({
   className,
 }: CategoryListProps) => {
   const [hoveredItem, setHoveredItem] = useState<string | number | null>(null);
+  const [visibleItem, setVisibleItem] = useState<string | number | null>(null);
+  const itemRefs = useRef<Map<string | number, HTMLDivElement>>(new Map());
+
+  // Intersection Observer for mobile scroll highlighting
+  useEffect(() => {
+    // Only set up observer on mobile devices
+    const checkMobile = () => window.innerWidth < 768;
+    if (!checkMobile()) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -20% 0px', // Trigger when item is in center 60% of viewport
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      // Find the most visible entry
+      let mostVisible: IntersectionObserverEntry | null = null;
+      let maxRatio = 0;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          mostVisible = entry;
+        }
+      });
+
+      if (mostVisible) {
+        const itemId = mostVisible.target.getAttribute('data-item-id');
+        if (itemId) {
+          // Convert to number if it's a numeric string to match category.id type
+          const numericId = !isNaN(Number(itemId)) ? Number(itemId) : itemId;
+          setVisibleItem(numericId);
+        }
+      } else {
+        // Clear visible item when nothing is intersecting
+        setVisibleItem(null);
+      }
+    }, observerOptions);
+
+    // Observe all category items after a short delay to ensure refs are set
+    const timeoutId = setTimeout(() => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+      });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+      observer.disconnect();
+    };
+  }, [categories]);
 
   return (
-    <div className={cn("w-full bg-transparent text-foreground p-8", className)}>
+    <div className={cn("w-full bg-transparent text-foreground p-4 md:p-8", className)}>
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-16">
           {headerIcon && (
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/80 to-primary mb-6 text-primary-foreground">
               {headerIcon}
@@ -49,25 +104,35 @@ export const CategoryList = ({
 
         {/* Categories List */}
         <div className="space-y-3">
-          {categories.map((category) => (
+          {categories.map((category) => {
+            const isActive = hoveredItem === category.id || visibleItem === category.id;
+            return (
             <div
               key={category.id}
               className="relative group"
               onMouseEnter={() => setHoveredItem(category.id)}
               onMouseLeave={() => setHoveredItem(null)}
               onClick={category.onClick}
+              ref={(el) => {
+                if (el) {
+                  itemRefs.current.set(String(category.id), el);
+                  el.setAttribute('data-item-id', String(category.id));
+                } else {
+                  itemRefs.current.delete(String(category.id));
+                }
+              }}
             >
               <div
                 className={cn(
                   "relative overflow-hidden border bg-transparent transition-all duration-300 ease-in-out cursor-pointer",
-                  // Hover state styles
-                  hoveredItem === category.id
+                  // Hover/scroll state styles
+                  isActive
                     ? 'h-32 border-primary shadow-lg shadow-primary/20 bg-primary/5'
                     : 'h-24 border-border/30 hover:border-primary/50'
                 )}
               >
-                {/* Corner brackets that appear on hover */}
-                {hoveredItem === category.id && (
+                {/* Corner brackets that appear on hover/scroll */}
+                {isActive && (
                   <>
                     <div className="absolute top-3 left-3 w-6 h-6">
                       <div className="absolute top-0 left-0 w-4 h-0.5 bg-primary" />
@@ -113,10 +178,10 @@ export const CategoryList = ({
                       className={cn(
                         "font-bold transition-all duration-300",
                         category.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl',
-                        hoveredItem === category.id ? 'text-primary' : 'text-foreground'
+                        isActive ? 'text-primary' : 'text-foreground'
                       )}
                       style={{
-                        textShadow: hoveredItem === category.id 
+                        textShadow: isActive 
                           ? '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor'
                           : 'none',
                         transition: 'text-shadow 0.3s ease, color 0.3s ease'
@@ -128,10 +193,10 @@ export const CategoryList = ({
                       <p
                         className={cn(
                           "hidden md:block mt-1 transition-all duration-300 text-sm md:text-base",
-                           hoveredItem === category.id ? 'text-foreground/90' : 'text-muted-foreground'
+                           isActive ? 'text-foreground/90' : 'text-muted-foreground'
                         )}
                         style={{
-                          textShadow: hoveredItem === category.id 
+                          textShadow: isActive 
                             ? '0 0 8px currentColor, 0 0 16px currentColor'
                             : 'none',
                           transition: 'text-shadow 0.3s ease, color 0.3s ease'
@@ -142,16 +207,17 @@ export const CategoryList = ({
                     )}
                   </div>
 
-                  {/* Icon appears on the right on hover */}
-                  {category.icon && hoveredItem === category.id && (
-                    <div className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Icon appears on the right on hover/scroll */}
+                  {category.icon && isActive && (
+                    <div className="text-primary opacity-100 transition-opacity duration-300">
                       {category.icon}
                     </div>
                   )}
                 </div>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </div>
