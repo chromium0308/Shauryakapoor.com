@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Accomplishments & Projects Tracker",
-  description: "Track and showcase your accomplishments and projects",
+  title: "Shaurya Kapoor - Portfolio",
+  description: "Engineering student who loves to fabricate ideas",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
