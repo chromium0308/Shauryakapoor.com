@@ -17,6 +17,14 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    id: 'arcus-intern',
+    title: 'AI development Intern',
+    organization: 'Arcus innovation studios - 360 social impact studios',
+    date: '2026 - present',
+    description: 'Working as an AI development intern, contributing to innovative projects that combine artificial intelligence with social impact initiatives.',
+    type: 'work',
+  },
+  {
     id: 'websummit-2025',
     title: 'Websummit 2025 Scholar',
     date: '2025',
