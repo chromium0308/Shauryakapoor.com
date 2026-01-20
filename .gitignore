@@ -34,3 +34,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# portfolio data (local only, not for GitHub)
+portfolio-data.md
