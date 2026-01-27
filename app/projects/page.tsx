@@ -33,7 +33,8 @@ const currentProjects: Category[] = [
   {
     id: 14,
     title: 'Braile Project',
-    technologies: [],
+    subtitle: 'An interdisciplinary project that combines my knowledge working with AI agents with my knowledge of electronics and hardware.',
+    technologies: ['Gemini', 'Python', 'Arduino', 'Solidworks'],
   },
 ];
 
