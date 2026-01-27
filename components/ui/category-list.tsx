@@ -11,6 +11,7 @@ export interface Category {
   onClick?: () => void;
   featured?: boolean;
   technologies?: string[];
+  shelved?: boolean;
 }
 
 // Define the props for the CategoryList component
@@ -108,14 +109,15 @@ export const CategoryList = ({
         {/* Categories List */}
         <div className="space-y-3">
           {categories.map((category) => {
-            const isActive = hoveredItem === category.id || visibleItem === category.id;
+            const isActive = !category.shelved && (hoveredItem === category.id || visibleItem === category.id);
+            const isShelved = category.shelved;
             return (
             <div
               key={category.id}
               className="relative group"
-              onMouseEnter={() => setHoveredItem(category.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-              onClick={category.onClick}
+              onMouseEnter={() => !isShelved && setHoveredItem(category.id)}
+              onMouseLeave={() => !isShelved && setHoveredItem(null)}
+              onClick={!isShelved ? category.onClick : undefined}
               ref={(el) => {
                 if (el) {
                   itemRefs.current.set(String(category.id), el);
@@ -127,15 +129,18 @@ export const CategoryList = ({
             >
               <div
                 className={cn(
-                  "relative overflow-hidden border bg-transparent transition-all duration-300 ease-in-out cursor-pointer",
-                  // Hover/scroll state styles
-                  isActive
+                  "relative overflow-hidden border bg-transparent transition-all duration-300 ease-in-out",
+                  isShelved 
+                    ? 'h-24 border-gray-400/20 cursor-not-allowed opacity-60' 
+                    : 'cursor-pointer',
+                  // Hover/scroll state styles (only for non-shelved items)
+                  !isShelved && isActive
                     ? 'h-32 border-primary shadow-lg shadow-primary/20 bg-primary/5'
-                    : 'h-24 border-border/30 hover:border-primary/50'
+                    : !isShelved && 'h-24 border-border/30 hover:border-primary/50'
                 )}
               >
                 {/* Corner brackets that appear on hover/scroll */}
-                {isActive && (
+                {!isShelved && isActive && (
                   <>
                     <div className="absolute top-3 left-3 w-6 h-6">
                       <div className="absolute top-0 left-0 w-4 h-0.5 bg-primary" />
@@ -159,7 +164,12 @@ export const CategoryList = ({
                       return (
                         <span
                           key={idx}
-                          className="px-2 py-0.5 text-[10px] md:text-xs font-medium bg-gray-600/80 text-white border border-gray-500/50 rounded-md backdrop-blur-sm flex items-center gap-1.5"
+                          className={cn(
+                            "px-2 py-0.5 text-[10px] md:text-xs font-medium border rounded-md backdrop-blur-sm flex items-center gap-1.5",
+                            isShelved 
+                              ? 'bg-gray-500/50 text-gray-400 border-gray-500/30' 
+                              : 'bg-gray-600/80 text-white border-gray-500/50'
+                          )}
                         >
                           <span
                             className={cn(
@@ -177,28 +187,43 @@ export const CategoryList = ({
                 {/* Content */}
                 <div className="flex items-center justify-between h-full px-6 md:px-8">
                   <div className="flex-1 pr-2">
-                    <h3
-                      className={cn(
-                        "font-bold transition-all duration-300",
-                        category.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl',
-                        isActive ? 'text-primary' : 'text-foreground'
+                    <div className="flex items-center gap-2">
+                      <h3
+                        className={cn(
+                          "font-bold transition-all duration-300",
+                          category.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl',
+                          isShelved 
+                            ? 'text-gray-500 dark:text-gray-500' 
+                            : isActive 
+                              ? 'text-primary' 
+                              : 'text-foreground'
+                        )}
+                        style={isShelved ? {} : {
+                          textShadow: isActive 
+                            ? '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor'
+                            : 'none',
+                          transition: 'text-shadow 0.3s ease, color 0.3s ease'
+                        }}
+                      >
+                        {category.title}
+                      </h3>
+                      {isShelved && (
+                        <span className="px-2 py-0.5 text-xs font-medium bg-gray-400/20 text-gray-500 dark:text-gray-500 border border-gray-400/30 rounded">
+                          Shelved
+                        </span>
                       )}
-                      style={{
-                        textShadow: isActive 
-                          ? '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor'
-                          : 'none',
-                        transition: 'text-shadow 0.3s ease, color 0.3s ease'
-                      }}
-                    >
-                      {category.title}
-                    </h3>
+                    </div>
                     {category.subtitle && (
                       <p
                         className={cn(
                           "hidden md:block mt-1 transition-all duration-300 text-sm md:text-base",
-                           isActive ? 'text-foreground/90' : 'text-muted-foreground'
+                          isShelved 
+                            ? 'text-gray-500 dark:text-gray-500' 
+                            : isActive 
+                              ? 'text-foreground/90' 
+                              : 'text-muted-foreground'
                         )}
-                        style={{
+                        style={isShelved ? {} : {
                           textShadow: isActive 
                             ? '0 0 8px currentColor, 0 0 16px currentColor'
                             : 'none',
@@ -211,7 +236,7 @@ export const CategoryList = ({
                   </div>
 
                   {/* Icon appears on the right on hover/scroll */}
-                  {category.icon && isActive && (
+                  {!isShelved && category.icon && isActive && (
                     <div className="text-primary opacity-100 transition-opacity duration-300">
                       {category.icon}
                     </div>

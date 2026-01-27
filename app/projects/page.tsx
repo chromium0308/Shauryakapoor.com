@@ -25,14 +25,26 @@ const currentProjects: Category[] = [
     icon: <ArrowRight className="w-8 h-8" />,
   },
   {
-    id: 3,
-    title: 'Solid Works IDE',
-    subtitle: 'A cloud-based IDE that transforms SolidWorks files into STEP format, enabling seamless editing and collaboration in the cloud.',
-    technologies: ['Next.js', 'Python', 'Solidworks API'],
+    id: 13,
+    title: 'ExamEasy',
+    subtitle: 'A Leaving cert exam question tutor that utilises AI to teach you every step of every problem.',
+    technologies: ['React', 'Next.js', 'Python'],
+  },
+  {
+    id: 14,
+    title: 'Braile Project',
+    technologies: [],
   },
 ];
 
 const completedProjects: Category[] = [
+  {
+    id: 3,
+    title: 'Solid Works IDE',
+    subtitle: 'A cloud-based IDE that transforms SolidWorks files into STEP format, enabling seamless editing and collaboration in the cloud.',
+    technologies: ['Next.js', 'Python', 'Solidworks API'],
+    shelved: true,
+  },
   {
     id: 4,
     title: 'Movinnit.ai',
