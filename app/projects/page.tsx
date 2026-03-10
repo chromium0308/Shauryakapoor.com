@@ -17,14 +17,6 @@ const currentProjects: Category[] = [
     featured: true,
   },
   {
-    id: 15,
-    title: 'Ventria',
-    subtitle: 'HIPAA-secured heart monitoring app with Apple Watch sync—heart rate, HRV, steps, sleep, and AI-powered heart failure risk insights.',
-    technologies: ['Xcode', 'Swift'],
-    onClick: () => window.open('https://medathon-production.up.railway.app/', '_blank'),
-    icon: <ArrowRight className="w-8 h-8" />,
-  },
-  {
     id: 14,
     title: 'Braile Project',
     subtitle: 'An interdisciplinary project that combines my knowledge working with AI agents with my knowledge of electronics and hardware.',
@@ -46,6 +38,14 @@ const completedProjects: Category[] = [
     title: 'ExamEasy',
     subtitle: 'A Leaving cert exam question tutor that utilises AI to teach you every step of every problem.',
     technologies: ['React', 'Next.js', 'Python'],
+  },
+  {
+    id: 15,
+    title: 'Ventria',
+    subtitle: 'HIPAA-secured heart monitoring app with Apple Watch sync—heart rate, HRV, steps, sleep, and AI-powered heart failure risk insights.',
+    technologies: ['Xcode', 'Swift'],
+    onClick: () => window.open('https://medathon-production.up.railway.app/', '_blank'),
+    icon: <ArrowRight className="w-8 h-8" />,
   },
   {
     id: 3,
