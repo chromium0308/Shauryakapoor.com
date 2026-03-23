@@ -17,6 +17,12 @@ const currentProjects: Category[] = [
     featured: true,
   },
   {
+    id: 16,
+    title: 'Zenemic',
+    subtitle: 'An event planning assistance app that simplifies organising and managing events.',
+    technologies: ['React Native', 'Expo', 'Swift'],
+  },
+  {
     id: 14,
     title: 'Braile Project',
     subtitle: 'An interdisciplinary project that combines my knowledge working with AI agents with my knowledge of electronics and hardware.',
@@ -38,6 +44,8 @@ const completedProjects: Category[] = [
     title: 'ExamEasy',
     subtitle: 'A Leaving cert exam question tutor that utilises AI to teach you every step of every problem.',
     technologies: ['React', 'Next.js', 'Python'],
+    onClick: () => window.open('https://Exameasy.ie', '_blank'),
+    icon: <ArrowRight className="w-8 h-8" />,
   },
   {
     id: 15,
