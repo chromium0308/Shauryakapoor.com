@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <>
-      <div style={{ height: SCROLL_RANGE + 800 }} aria-hidden="true" />
+      <div className="hidden sm:block" style={{ height: SCROLL_RANGE + 800 }} aria-hidden="true" />
 
       <div
         className="fixed inset-0 overflow-hidden"
@@ -92,16 +92,16 @@ export default function Home() {
               opacity: othersOpacity,
             }}
           />
-          <div style={{ height: TOP_OFFSET }} aria-hidden="true" />
+          <div className="h-12 sm:h-[114px]" aria-hidden="true" />
 
           <div
-            className="w-full items-center gap-6 pl-20 pr-6 sm:gap-10 sm:pl-24 md:pl-32 md:pr-12 lg:pl-44 flex flex-row"
+            className="w-full items-center gap-4 px-4 pt-4 sm:gap-10 sm:pl-24 sm:pr-6 sm:pt-0 md:pl-32 md:pr-12 lg:pl-44 flex flex-col sm:flex-row"
             style={{ marginTop: -8 }}
           >
             <img
               src="/canvas/New Project (10).png"
               alt=""
-              className="w-56 shrink-0 sm:w-72 md:w-96 lg:w-[28rem]"
+              className="w-36 shrink-0 sm:w-72 md:w-96 lg:w-[28rem]"
               style={{
                 filter: "drop-shadow(0 8px 20px rgba(0,0,0,0.18))",
                 opacity: othersOpacity,
@@ -111,40 +111,30 @@ export default function Home() {
             />
 
             <div
+              className="text-center sm:text-left sm:translate-y-10"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
                 color: "#1a1a1a",
-                transform: "translateY(40px)",
                 opacity: othersOpacity,
               }}
             >
               <h1
-                className="m-0"
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                  fontSize: 64,
-                  lineHeight: 1.1,
-                  fontWeight: 700,
-                }}
+                className="m-0 text-[40px] sm:text-[56px] md:text-[64px] leading-[1.1] font-bold"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 Shaurya
                 <br />
                 <span style={{ color: "#C25A1A" }}>Kapoor</span>
               </h1>
               <p
-                className="m-0"
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                  fontSize: 20,
-                  fontWeight: 600,
-                  marginTop: 24,
-                }}
+                className="m-0 mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl font-semibold"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 18 year old builder | Websummit Scholar &apos;25 | Eirspace
               </p>
               <div
-                className="flex flex-row items-center justify-start gap-5"
-                style={{ marginTop: 20, color: "#C25A1A" }}
+                className="flex flex-row items-center justify-center sm:justify-start gap-5 mt-5"
+                style={{ color: "#C25A1A" }}
               >
                 <a
                   href="mailto:shaurya@kapoor.ie"
@@ -190,12 +180,20 @@ export default function Home() {
                   <Github size={26} strokeWidth={1.75} />
                 </a>
               </div>
+
+              <div
+                className="flex sm:hidden flex-row justify-center gap-6 mt-6 text-base font-semibold"
+                style={{ color: "#C25A1A" }}
+              >
+                <Link href="/projects" className="underline">Projects →</Link>
+                <Link href="/experience" className="underline">Experience →</Link>
+              </div>
             </div>
 
             <Link
               href="/projects"
               aria-label="View projects"
-              className="absolute transition-transform hover:scale-105"
+              className="hidden sm:block absolute transition-transform hover:scale-105"
               style={{
                 top: 24,
                 right: 172,
@@ -216,7 +214,7 @@ export default function Home() {
               ref={experienceRef}
               href="/experience"
               aria-label="View experience"
-              className="absolute transition-transform hover:scale-105"
+              className="hidden sm:block absolute transition-transform hover:scale-105"
               style={{
                 top: 230,
                 right: -10,
@@ -236,11 +234,10 @@ export default function Home() {
             src="/canvas/shooting-star.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute select-none"
+            className="pointer-events-none absolute select-none w-32 sm:w-56"
             style={{
               top: 40,
-              right: 60,
-              width: "14rem",
+              right: 16,
               transform: "rotate(-25deg)",
               filter: "drop-shadow(0 6px 14px rgba(0,0,0,0.18))",
               opacity: othersOpacity,
@@ -267,11 +264,10 @@ export default function Home() {
             src="/canvas/multi-star.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute select-none"
+            className="pointer-events-none absolute select-none w-32 sm:w-56 md:w-72"
             style={{
               bottom: 24,
-              left: 24,
-              width: "18rem",
+              left: 16,
               filter: "drop-shadow(0 6px 14px rgba(0,0,0,0.18))",
               opacity: othersOpacity,
               zIndex: 15,

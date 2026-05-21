@@ -115,12 +115,12 @@ export default function ExperiencePage() {
       />
 
       <main
-        className="w-full px-8 pt-2 pb-16 relative"
+        className="w-full px-4 md:px-8 pt-2 pb-16 relative"
         style={{ fontFamily: SERIF, color: INK, zIndex: 1 }}
       >
         <Link
           href="/"
-          className="absolute top-6 left-8 text-lg underline hover:opacity-70 transition-opacity"
+          className="absolute top-6 left-4 md:left-8 text-base md:text-lg underline hover:opacity-70 transition-opacity"
           style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
         >
           ← Back
@@ -129,7 +129,7 @@ export default function ExperiencePage() {
         <Link
           href="/projects"
           aria-label="View projects"
-          className="absolute transition-transform hover:scale-105"
+          className="hidden md:block absolute transition-transform hover:scale-105"
           style={{
             top: 24,
             right: -140,
@@ -146,9 +146,17 @@ export default function ExperiencePage() {
           />
         </Link>
 
+        <Link
+          href="/projects"
+          className="md:hidden absolute top-6 right-4 text-base underline hover:opacity-70 transition-opacity"
+          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+        >
+          Projects →
+        </Link>
+
         <div className="max-w-5xl mx-auto mt-4">
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-8 mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-12 md:mt-8 mb-6"
             style={{
               fontFamily: SERIF,
               color: INK,
@@ -159,10 +167,10 @@ export default function ExperiencePage() {
           >
             Experience
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="lg:col-span-1 space-y-8">
               <section
-                className="p-6"
+                className="p-5 md:p-6"
                 style={{
                   border: `1px solid ${ACCENT}55`,
                   backgroundColor: 'rgba(255,255,255,0.35)',
@@ -184,7 +192,7 @@ export default function ExperiencePage() {
               </section>
 
               <section
-                className="p-6"
+                className="p-5 md:p-6"
                 style={{
                   border: `1px solid ${ACCENT}55`,
                   backgroundColor: 'rgba(255,255,255,0.35)',
@@ -213,7 +221,7 @@ export default function ExperiencePage() {
 
             <div className="lg:col-span-2">
               <section
-                className="p-6 md:p-8"
+                className="p-5 md:p-8"
                 style={{
                   border: `1px solid ${ACCENT}55`,
                   backgroundColor: 'rgba(255,255,255,0.35)',
@@ -234,7 +242,7 @@ export default function ExperiencePage() {
                       return (
                         <div
                           key={exp.id}
-                          className="relative pl-12 group"
+                          className="relative pl-8 md:pl-12 group"
                           onMouseEnter={() => setHoveredItem(exp.id)}
                           onMouseLeave={() => setHoveredItem(null)}
                         >

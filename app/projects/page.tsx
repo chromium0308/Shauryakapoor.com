@@ -159,7 +159,7 @@ function ProjectRow({ p }: { p: Project }) {
       }}
     >
       <div
-        className="relative transition-all duration-300 px-6 md:px-8 py-5"
+        className="relative transition-all duration-300 px-4 md:px-8 py-4 md:py-5"
         style={{
           borderTop: `1px solid ${ACCENT}40`,
           borderBottom: active ? `1px solid ${ACCENT}` : `1px solid transparent`,
@@ -242,9 +242,9 @@ function ProjectRow({ p }: { p: Project }) {
 
 function Section({ title, items }: { title: string; items: Project[] }) {
   return (
-    <section className="max-w-4xl mx-auto px-4 md:px-8 mt-10">
+    <section className="max-w-4xl mx-auto px-0 md:px-8 mt-10">
       <h2
-        className="text-3xl md:text-4xl font-bold mb-6 tracking-tight"
+        className="text-2xl md:text-4xl font-bold mb-6 tracking-tight"
         style={{ color: INK, fontFamily: SERIF, borderBottom: `2px solid ${ACCENT}`, paddingBottom: 8, display: 'inline-block' }}
       >
         {title}
@@ -300,10 +300,10 @@ export default function ProjectsPage() {
         }}
       />
 
-      <main className="w-full px-8 pt-2 pb-20 relative" style={{ fontFamily: SERIF, color: INK, zIndex: 1 }}>
+      <main className="w-full px-4 md:px-8 pt-2 pb-20 relative" style={{ fontFamily: SERIF, color: INK, zIndex: 1 }}>
         <Link
           href="/"
-          className="absolute top-6 left-8 text-lg underline hover:opacity-70 transition-opacity"
+          className="absolute top-6 left-4 md:left-8 text-base md:text-lg underline hover:opacity-70 transition-opacity"
           style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
         >
           ← Back
@@ -312,7 +312,7 @@ export default function ProjectsPage() {
         <Link
           href="/experience"
           aria-label="View experience"
-          className="absolute transition-transform hover:scale-105"
+          className="hidden md:block absolute transition-transform hover:scale-105"
           style={{
             top: 24,
             right: -10,
@@ -328,8 +328,16 @@ export default function ProjectsPage() {
           />
         </Link>
 
+        <Link
+          href="/experience"
+          className="md:hidden absolute top-6 right-4 text-base underline hover:opacity-70 transition-opacity"
+          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+        >
+          Experience →
+        </Link>
+
         <h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-8 mb-4 ml-16 md:ml-32 lg:ml-48"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-12 md:mt-8 mb-4 ml-0 md:ml-32 lg:ml-48"
           style={{
             fontFamily: SERIF,
             color: INK,
