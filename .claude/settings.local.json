@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx --yes puppeteer browsers install chrome)",
+      "Bash(npx --yes puppeteer runBrowser --browser chrome -- --headless --disable-gpu --print-to-pdf=test.pdf)",
+      "Bash(node generate-cv.js)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(cd /tmp)",
+      "Bash(rm -rf canvas-ref)",
+      "Read(//tmp/canvas-ref/**)",
+      "Read(//tmp/canvas-ref/src/**)",
+      "Bash(cygpath -w /tmp/canvas-ref/src/styles.css)",
+      "Bash(mkdir -p public/canvas)",
+      "Bash(cp /tmp/canvas-ref/src/assets/bear-emblem.png /tmp/canvas-ref/src/assets/experience-tag.png /tmp/canvas-ref/src/assets/projects-tag.png /tmp/canvas-ref/src/assets/paper-tear-bottom.png /tmp/canvas-ref/src/assets/paper-tear-corner.png /tmp/canvas-ref/src/assets/paper-tear-top.png /tmp/canvas-ref/src/assets/paper-tear.png public/canvas/)",
+      "Bash(npx --yes tsc --noEmit)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -sS http://localhost:3000/ -o /tmp/home.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -sS http://localhost:3000/experience -o /tmp/exp.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -sS http://localhost:3000/projects -o /tmp/proj.html -w \"HTTP %{http_code}\\\\n\")"
+    ]
+  }
+}

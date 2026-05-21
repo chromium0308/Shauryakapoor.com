@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Navbar } from '@/components/ui/mini-navbar';
-import { InfiniteGridBackground } from '@/components/ui/infinite-grid-background';
+import Link from 'next/link';
 import { Briefcase, GraduationCap, Languages, Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -32,26 +31,11 @@ const experiences: ExperienceItem[] = [
     type: 'achievement',
   },
   {
-    id: 'achievements',
-    title: 'Achievements',
-    date: '2023 - PRESENT',
-    description: 'Winner of most creative design - TEDI London thinking ahead 2023 | Winner of best Engineered - Dukes schools competition 2024 | Selected to take part in the IrMO (Irish Mathematical Olympiad)',
-    type: 'achievement',
-  },
-  {
     id: 'engineering',
     title: 'Engineering',
     organization: 'University College Dublin',
-    date: '2025 - present',
-    description: 'Pursuing Engineering degree at one of Ireland\'s leading universities.',
-    type: 'education',
-  },
-  {
-    id: 'leaving-cert',
-    title: 'Leaving Certificate - 613 points',
-    organization: 'The Institute of Education',
-    date: '2023 - 2025',
-    description: 'Achieved exceptional results in the Leaving Certificate examinations.',
+    date: 'Sep 2025 - Jan 2026',
+    description: 'Studied Engineering at one of Ireland\'s leading universities.',
     type: 'education',
   },
   {
@@ -76,6 +60,10 @@ const languages = [
   { name: 'German', level: 'B2 Level' },
 ];
 
+const ACCENT = '#C25A1A';
+const INK = '#1a1a1a';
+const SERIF = '"Times New Roman", Times, serif';
+
 const getIcon = (type: ExperienceItem['type']) => {
   switch (type) {
     case 'work':
@@ -90,152 +78,205 @@ const getIcon = (type: ExperienceItem['type']) => {
 export default function ExperiencePage() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  // Get color based on experience type
-  const getTimelineColor = (type: 'work' | 'education' | 'achievement') => {
-    switch (type) {
-      case 'work':
-        return 'rgb(59, 130, 246)'; // blue-500
-      case 'education':
-        return 'rgb(34, 197, 94)'; // green-500
-      case 'achievement':
-        return 'rgb(234, 179, 8)'; // yellow-500
-    }
-  };
-
   return (
-    <InfiniteGridBackground>
-      <Navbar />
-      <div className="pt-20 md:pt-24 pb-4 md:pb-12 px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2 tracking-tight">Experience</h1>
-          </div>
+    <div className="min-h-screen relative" style={{ backgroundColor: '#F2E8D5', fontFamily: SERIF, color: INK }}>
+      <img
+        src="/canvas/paper-tear-corner.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute select-none"
+        style={{
+          top: '-4%',
+          left: '-12%',
+          width: '55%',
+          maxWidth: 720,
+          transform: 'rotate(-35deg)',
+          transformOrigin: 'top left',
+          filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.14))',
+          opacity: 0.9,
+          zIndex: 0,
+        }}
+      />
 
+      <img
+        src="/canvas/star-cloud.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none fixed select-none hidden md:block"
+        style={{
+          top: '50%',
+          right: 24,
+          width: '12rem',
+          transform: 'translateY(-50%)',
+          filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.15))',
+          opacity: 0.9,
+          zIndex: 0,
+        }}
+      />
+
+      <main
+        className="w-full px-8 pt-2 pb-16 relative"
+        style={{ fontFamily: SERIF, color: INK, zIndex: 1 }}
+      >
+        <Link
+          href="/"
+          className="absolute top-6 left-8 text-lg underline hover:opacity-70 transition-opacity"
+          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+        >
+          ← Back
+        </Link>
+
+        <Link
+          href="/projects"
+          aria-label="View projects"
+          className="absolute transition-transform hover:scale-105"
+          style={{
+            top: 24,
+            right: -140,
+            transform: 'rotate(15deg)',
+            transformOrigin: 'top right',
+            zIndex: 20,
+          }}
+        >
+          <img
+            src="/canvas/projects-tag.png"
+            alt="Projects"
+            className="w-[30rem] md:w-[36rem] lg:w-[42rem]"
+            style={{ filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.2))' }}
+          />
+        </Link>
+
+        <div className="max-w-5xl mx-auto mt-4">
+          <h1
+            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-8 mb-6"
+            style={{
+              fontFamily: SERIF,
+              color: INK,
+              borderBottom: `3px solid ${ACCENT}`,
+              paddingBottom: 12,
+              display: 'inline-block',
+            }}
+          >
+            Experience
+          </h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column - Languages & Education Summary */}
             <div className="lg:col-span-1 space-y-8">
-              {/* Languages */}
-              <div className="bg-transparent rounded-lg p-6 border border-border/30">
-                <div className="flex items-center gap-2 mb-4">
-                  <Languages className="w-5 h-5 text-primary" />
-                  <h2 className="text-xl font-bold">Languages</h2>
+              <section
+                className="p-6"
+                style={{
+                  border: `1px solid ${ACCENT}55`,
+                  backgroundColor: 'rgba(255,255,255,0.35)',
+                  borderRadius: 2,
+                }}
+              >
+                <div className="flex items-center gap-2 mb-4" style={{ color: ACCENT }}>
+                  <Languages className="w-5 h-5" />
+                  <h2 className="text-xl font-bold" style={{ color: INK }}>Languages</h2>
                 </div>
                 <div className="space-y-3">
                   {languages.map((lang, idx) => (
                     <div key={idx} className="flex justify-between items-center">
-                      <span className="text-foreground font-medium">{lang.name}</span>
-                      <span className="text-muted-foreground text-sm">{lang.level}</span>
+                      <span className="font-medium">{lang.name}</span>
+                      <span className="text-sm" style={{ color: `${INK}aa` }}>{lang.level}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
 
-              {/* Education Summary */}
-              <div className="bg-transparent rounded-lg p-6 border border-border/30">
-                <div className="flex items-center gap-2 mb-4">
-                  <GraduationCap className="w-5 h-5 text-primary" />
-                  <h2 className="text-xl font-bold">Education</h2>
+              <section
+                className="p-6"
+                style={{
+                  border: `1px solid ${ACCENT}55`,
+                  backgroundColor: 'rgba(255,255,255,0.35)',
+                  borderRadius: 2,
+                }}
+              >
+                <div className="flex items-center gap-2 mb-4" style={{ color: ACCENT }}>
+                  <GraduationCap className="w-5 h-5" />
+                  <h2 className="text-xl font-bold" style={{ color: INK }}>Education</h2>
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-semibold text-foreground">Engineering</h3>
-                    <p className="text-sm text-muted-foreground">University College Dublin</p>
-                    <p className="text-xs text-muted-foreground mt-1">2025 - present</p>
+                    <h3 className="font-semibold">Engineering</h3>
+                    <p className="text-sm" style={{ color: `${INK}aa` }}>University College Dublin</p>
+                    <p className="text-xs mt-1" style={{ color: `${INK}88` }}>Sep 2025 - Jan 2026</p>
                   </div>
-                  <div className="pt-2 border-t border-border/50">
-                    <h3 className="font-semibold text-foreground">Leaving Certificate</h3>
-                    <p className="text-sm text-muted-foreground">613 points</p>
-                    <p className="text-sm text-muted-foreground">The Institute of Education</p>
-                    <p className="text-xs text-muted-foreground mt-1">2023 - 2025</p>
+                  <div className="pt-2" style={{ borderTop: `1px solid ${ACCENT}33` }}>
+                    <h3 className="font-semibold">Leaving Certificate</h3>
+                    <p className="text-sm" style={{ color: `${INK}aa` }}>613 points</p>
+                    <p className="text-sm" style={{ color: `${INK}aa` }}>The Institute of Education</p>
+                    <p className="text-xs mt-1" style={{ color: `${INK}88` }}>2023 - 2025</p>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
 
-            {/* Right Column - Timeline */}
             <div className="lg:col-span-2">
-              <div className="bg-transparent rounded-lg p-6 md:p-8 border border-border/30">
-                <div className="flex items-center gap-2 mb-8">
-                  <Briefcase className="w-6 h-6 text-primary" />
-                  <h2 className="text-2xl font-bold">Work Experience & Achievements</h2>
+              <section
+                className="p-6 md:p-8"
+                style={{
+                  border: `1px solid ${ACCENT}55`,
+                  backgroundColor: 'rgba(255,255,255,0.35)',
+                  borderRadius: 2,
+                }}
+              >
+                <div className="flex items-center gap-2 mb-8" style={{ color: ACCENT }}>
+                  <Briefcase className="w-6 h-6" />
+                  <h2 className="text-2xl font-bold" style={{ color: INK }}>
+                    Work Experience &amp; Achievements
+                  </h2>
                 </div>
 
-                {/* Timeline */}
                 <div className="relative">
-                  <div className="space-y-8">
-                    {experiences.map((exp, idx) => {
+                  <div className="space-y-6">
+                    {experiences.map((exp) => {
                       const isHovered = hoveredItem === exp.id;
-                      const dotColor = getTimelineColor(exp.type);
-                      
                       return (
-                        <div 
-                          key={exp.id} 
-                          className="relative pl-16 group"
+                        <div
+                          key={exp.id}
+                          className="relative pl-12 group"
                           onMouseEnter={() => setHoveredItem(exp.id)}
                           onMouseLeave={() => setHoveredItem(null)}
                         >
-                          {/* Timeline Dot */}
-                          <div 
-                            className="absolute left-4 top-1 w-4 h-4 rounded-full border-2 border-background flex items-center justify-center z-10 transition-all duration-300"
+                          <div
+                            className="absolute left-2 top-2 w-3 h-3 rounded-full transition-all duration-300"
                             style={{
-                              backgroundColor: isHovered ? dotColor : dotColor,
-                              borderColor: isHovered ? dotColor : dotColor,
-                              boxShadow: isHovered ? `0 0 15px ${dotColor}, 0 0 30px ${dotColor}` : 'none',
-                              transform: isHovered ? 'scale(1.3)' : 'scale(1)',
+                              backgroundColor: ACCENT,
+                              transform: isHovered ? 'scale(1.4)' : 'scale(1)',
+                              boxShadow: isHovered ? `0 0 0 4px ${ACCENT}22` : 'none',
+                            }}
+                          />
+                          <div
+                            className={cn('p-4 transition-all duration-300')}
+                            style={{
+                              borderLeft: `2px solid ${isHovered ? ACCENT : `${ACCENT}55`}`,
+                              backgroundColor: isHovered ? 'rgba(194, 90, 26, 0.06)' : 'transparent',
+                              borderRadius: 2,
                             }}
                           >
-                            <div className="w-2 h-2 rounded-full bg-background" />
-                          </div>
-
-                          {/* Content */}
-                          <div 
-                            className={cn(
-                              "bg-transparent rounded-lg p-4 transition-all duration-300 border border-border/20",
-                              isHovered && "bg-background/20 border-border/40"
-                            )}
-                            style={{
-                              boxShadow: isHovered 
-                                ? `0 0 20px ${dotColor}40, 0 0 40px ${dotColor}30, 0 0 60px ${dotColor}20`
-                                : 'none',
-                              border: isHovered ? `1px solid ${dotColor}60` : '1px solid transparent',
-                            }}
-                          >
-                            <div className="flex items-start justify-between mb-2">
+                            <div className="flex items-start justify-between mb-2 gap-4">
                               <div className="flex items-center gap-2">
-                                <div 
-                                  className="transition-colors duration-300"
-                                  style={{
-                                    color: isHovered ? dotColor : dotColor,
-                                  }}
-                                >
-                                  {getIcon(exp.type)}
-                                </div>
-                                <h3 
-                                  className="text-lg font-bold text-foreground transition-all duration-300"
-                                  style={{
-                                    textShadow: isHovered 
-                                      ? `0 0 10px ${dotColor}, 0 0 20px ${dotColor}, 0 0 30px ${dotColor}`
-                                      : 'none',
-                                    color: isHovered ? dotColor : 'inherit',
-                                  }}
+                                <div style={{ color: ACCENT }}>{getIcon(exp.type)}</div>
+                                <h3
+                                  className="text-lg font-bold transition-colors duration-300"
+                                  style={{ color: isHovered ? ACCENT : INK }}
                                 >
                                   {exp.title}
                                 </h3>
                               </div>
-                              <span className="text-xs text-muted-foreground font-medium">{exp.date}</span>
+                              <span
+                                className="text-xs font-medium whitespace-nowrap"
+                                style={{ color: `${INK}99` }}
+                              >
+                                {exp.date}
+                              </span>
                             </div>
                             {exp.organization && (
-                              <p className="text-sm text-muted-foreground mb-2">{exp.organization}</p>
+                              <p className="text-sm mb-2 italic" style={{ color: `${INK}aa` }}>
+                                {exp.organization}
+                              </p>
                             )}
-                            <p 
-                              className="text-sm text-foreground/90 leading-relaxed transition-all duration-300"
-                              style={{
-                                textShadow: isHovered 
-                                  ? `0 0 8px ${dotColor}80, 0 0 16px ${dotColor}60`
-                                  : 'none',
-                              }}
-                            >
+                            <p className="text-sm leading-relaxed" style={{ color: INK }}>
                               {exp.description}
                             </p>
                           </div>
@@ -244,12 +285,11 @@ export default function ExperiencePage() {
                     })}
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
         </div>
-      </div>
-    </InfiniteGridBackground>
+      </main>
+    </div>
   );
 }
-
