@@ -80,9 +80,8 @@ export default function Home() {
             src="/canvas/paper-tear-corner.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute select-none"
+            className="pointer-events-none absolute select-none top-[calc(-5%+50px)] sm:top-[calc(-5%+60px)]"
             style={{
-              top: "calc(-5% + 60px)",
               left: "calc(-15% - 50px)",
               width: "70%",
               maxWidth: 900,
@@ -92,10 +91,10 @@ export default function Home() {
               opacity: othersOpacity,
             }}
           />
-          <div className="h-12 sm:h-[114px]" aria-hidden="true" />
+          <div className="h-24 sm:h-[114px]" aria-hidden="true" />
 
           <div
-            className="w-full items-center gap-4 px-4 pt-4 sm:gap-10 sm:pl-24 sm:pr-6 sm:pt-0 md:pl-32 md:pr-12 lg:pl-44 flex flex-col sm:flex-row"
+            className="w-full items-center gap-10 px-4 pt-8 sm:gap-10 sm:pl-24 sm:pr-6 sm:pt-0 md:pl-32 md:pr-12 lg:pl-44 flex flex-col sm:flex-row"
             style={{ marginTop: -8 }}
           >
             <img
@@ -127,13 +126,13 @@ export default function Home() {
                 <span style={{ color: "#C25A1A" }}>Kapoor</span>
               </h1>
               <p
-                className="m-0 mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl font-semibold"
+                className="m-0 mt-6 sm:mt-6 text-sm sm:text-lg md:text-xl font-semibold"
                 style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
                 18 year old builder | Websummit Scholar &apos;25 | Eirspace
               </p>
               <div
-                className="flex flex-row items-center justify-center sm:justify-start gap-5 mt-5"
+                className="flex flex-row items-center justify-center sm:justify-start gap-5 mt-8 sm:mt-5"
                 style={{ color: "#C25A1A" }}
               >
                 <a
@@ -182,11 +181,39 @@ export default function Home() {
               </div>
 
               <div
-                className="flex sm:hidden flex-row justify-center gap-6 mt-6 text-base font-semibold"
-                style={{ color: "#C25A1A" }}
+                className="flex sm:hidden flex-row justify-center gap-4 mt-10"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
               >
-                <Link href="/projects" className="underline">Projects →</Link>
-                <Link href="/experience" className="underline">Experience →</Link>
+                <Link
+                  href="/projects"
+                  className="inline-block transition-all hover:opacity-80"
+                  style={{
+                    color: "#1a1a1a",
+                    backgroundColor: 'rgba(255,255,255,0.5)',
+                    border: '1px solid #C25A1A',
+                    borderRadius: 2,
+                    padding: '8px 16px',
+                    fontSize: 15,
+                    fontWeight: 600,
+                  }}
+                >
+                  Projects →
+                </Link>
+                <Link
+                  href="/experience"
+                  className="inline-block transition-all hover:opacity-80"
+                  style={{
+                    color: "#1a1a1a",
+                    backgroundColor: 'rgba(255,255,255,0.5)',
+                    border: '1px solid #C25A1A',
+                    borderRadius: 2,
+                    padding: '8px 16px',
+                    fontSize: 15,
+                    fontWeight: 600,
+                  }}
+                >
+                  Experience →
+                </Link>
               </div>
             </div>
 

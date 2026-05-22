@@ -35,6 +35,12 @@ const currentProjects: Project[] = [
     subtitle: 'A drone that deploys from a vertical surface where it docks to a charge using a magnetic hinge that\'s built into the dock.',
     technologies: ['Solidworks', 'Arduino'],
   },
+  {
+    id: 18,
+    title: 'Abandoned Train Line Cart',
+    subtitle: 'Designing and manufacturing a cart that is meant to run on abandoned Irish train lines.',
+    technologies: ['Woodwork', 'Hardware'],
+  },
 ];
 
 const completedProjects: Project[] = [
@@ -270,24 +276,6 @@ export default function ProjectsPage() {
         aria-hidden="true"
         className="pointer-events-none absolute select-none"
         style={{
-          top: '-1%',
-          left: '-12%',
-          width: '55%',
-          maxWidth: 720,
-          transform: 'rotate(-35deg)',
-          transformOrigin: 'top left',
-          filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.14))',
-          opacity: 0.9,
-          zIndex: 0,
-        }}
-      />
-
-      <img
-        src="/canvas/paper-tear-corner.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute select-none"
-        style={{
           top: '-4%',
           right: '-12%',
           width: '50%',
@@ -303,8 +291,18 @@ export default function ProjectsPage() {
       <main className="w-full px-4 md:px-8 pt-2 pb-20 relative" style={{ fontFamily: SERIF, color: INK, zIndex: 1 }}>
         <Link
           href="/"
-          className="absolute top-6 left-4 md:left-8 text-base md:text-lg underline hover:opacity-70 transition-opacity"
-          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+          className="absolute top-6 left-4 md:left-8 inline-block transition-all hover:opacity-80"
+          style={{
+            fontFamily: SERIF,
+            color: INK,
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            border: `1px solid ${ACCENT}`,
+            borderRadius: 999,
+            padding: '6px 18px',
+            fontSize: 15,
+            fontWeight: 600,
+            zIndex: 25,
+          }}
         >
           ← Back
         </Link>
@@ -330,14 +328,24 @@ export default function ProjectsPage() {
 
         <Link
           href="/experience"
-          className="md:hidden absolute top-6 right-4 text-base underline hover:opacity-70 transition-opacity"
-          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+          className="md:hidden absolute top-6 right-4 inline-block transition-all hover:opacity-80"
+          style={{
+            fontFamily: SERIF,
+            color: INK,
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            border: `1px solid ${ACCENT}`,
+            borderRadius: 2,
+            padding: '6px 14px',
+            fontSize: 15,
+            fontWeight: 600,
+            zIndex: 25,
+          }}
         >
           Experience →
         </Link>
 
         <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-12 md:mt-8 mb-4 ml-0 md:ml-32 lg:ml-48"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-20 md:mt-14 mb-4 ml-0 md:ml-32 lg:ml-48"
           style={{
             fontFamily: SERIF,
             color: INK,

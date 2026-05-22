@@ -81,24 +81,6 @@ export default function ExperiencePage() {
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: '#F2E8D5', fontFamily: SERIF, color: INK }}>
       <img
-        src="/canvas/paper-tear-corner.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute select-none"
-        style={{
-          top: '-4%',
-          left: '-12%',
-          width: '55%',
-          maxWidth: 720,
-          transform: 'rotate(-35deg)',
-          transformOrigin: 'top left',
-          filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.14))',
-          opacity: 0.9,
-          zIndex: 0,
-        }}
-      />
-
-      <img
         src="/canvas/star-cloud.png"
         alt=""
         aria-hidden="true"
@@ -120,8 +102,18 @@ export default function ExperiencePage() {
       >
         <Link
           href="/"
-          className="absolute top-6 left-4 md:left-8 text-base md:text-lg underline hover:opacity-70 transition-opacity"
-          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+          className="absolute top-6 left-4 md:left-8 inline-block transition-all hover:opacity-80"
+          style={{
+            fontFamily: SERIF,
+            color: INK,
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            border: `1px solid ${ACCENT}`,
+            borderRadius: 999,
+            padding: '6px 18px',
+            fontSize: 15,
+            fontWeight: 600,
+            zIndex: 25,
+          }}
         >
           ← Back
         </Link>
@@ -148,15 +140,25 @@ export default function ExperiencePage() {
 
         <Link
           href="/projects"
-          className="md:hidden absolute top-6 right-4 text-base underline hover:opacity-70 transition-opacity"
-          style={{ fontFamily: SERIF, color: INK, zIndex: 25 }}
+          className="md:hidden absolute top-6 right-4 inline-block transition-all hover:opacity-80"
+          style={{
+            fontFamily: SERIF,
+            color: INK,
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            border: `1px solid ${ACCENT}`,
+            borderRadius: 2,
+            padding: '6px 14px',
+            fontSize: 15,
+            fontWeight: 600,
+            zIndex: 25,
+          }}
         >
           Projects →
         </Link>
 
         <div className="max-w-5xl mx-auto mt-4">
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-12 md:mt-8 mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-20 md:mt-14 mb-6"
             style={{
               fontFamily: SERIF,
               color: INK,
