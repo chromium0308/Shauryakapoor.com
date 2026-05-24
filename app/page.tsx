@@ -456,10 +456,10 @@ function ProjectCard({ p }: { p: Project }) {
         {p.label && <div className="label">{p.label}</div>}
       </div>
       <p className="pdesc">{p.desc}</p>
-      {(p.tag || p.link) && (
+      {(p.tag || (p.link && p.href)) && (
         <div className="pbtm">
           <span className="ptag">{p.tag}</span>
-          <span className="plink">{p.link}</span>
+          {p.link && p.href && <span className="plink">{p.link}</span>}
         </div>
       )}
     </>
