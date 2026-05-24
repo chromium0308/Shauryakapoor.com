@@ -4,9 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Shaurya Kapoor — shauryakapoor.com",
   description: "18 y/o builder · Websummit Scholar '25 · Eirspace",
-  icons: {
-    icon: '/canvas/favicon.svg',
-  },
 };
 
 export default function RootLayout({
