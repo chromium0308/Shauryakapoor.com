@@ -131,7 +131,7 @@ const CURRENT_PROJECTS: Project[] = [
     tag: "Solidworks · Arduino",
     link: "Build log →",
     size: "s-3",
-    image: "/assets/vdd.png",
+    image: "/assets/vdd.jpg",
     label: "VDD · concept sketch",
   },
   {
