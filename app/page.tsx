@@ -337,7 +337,7 @@ function AboutSection() {
         <a className="chip maroon" href="mailto:shaurya@kapoor.ie">Email</a>
         <a className="chip" href="https://github.com/chromium0308" target="_blank" rel="noreferrer">GitHub</a>
         <a className="chip" href="https://x.com/_chromium_0308" target="_blank" rel="noreferrer">X / Twitter</a>
-        <a className="chip" href="https://www.linkedin.com/in/shaurya-kapoor-99ba292b7/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a className="chip" href="https://www.linkedin.com/in/shaurya-kapoor0308/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a className="chip gold" href="https://www.instagram.com/shauryak_0308/" target="_blank" rel="noreferrer">Instagram</a>
       </div>
 
