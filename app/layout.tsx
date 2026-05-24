@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Shaurya Kapoor — shauryakapoor.com",
   description: "18 y/o builder · Websummit Scholar '25 · Eirspace",
   icons: {
-    icon: '/icon.svg',
+    icon: '/canvas/favicon.svg',
   },
 };
 
