@@ -13,12 +13,12 @@ type ExperienceItem = {
 
 const EXPERIENCE: ExperienceItem[] = [
   {
-    when: "2026 — Present",
+    when: "Jan 2026 — Jun 2026",
     sub: "Internship · Dublin",
     role: "AI Development Intern",
     company: "Arcus Innovation Studios — 360 Social Impact Studios",
-    desc: "Working as an AI development intern, contributing to innovative projects that combine artificial intelligence with social impact initiatives.",
-    stamp: "Intern · 2026–",
+    desc: "Worked as an AI development intern, contributing to innovative projects that combined artificial intelligence with social impact initiatives.",
+    stamp: "Intern · 2026",
     sub2: "Arcus · AI",
     featured: true,
   },
@@ -146,11 +146,21 @@ const CURRENT_PROJECTS: Project[] = [
     image: "/assets/train-cart.png",
     label: "Cart · workshop progress",
   },
+  {
+    n: "05",
+    year: "Now · 2026",
+    name: "Lamda",
+    cat: "In Progress",
+    desc: "Latest project on the bench — more details coming soon.",
+    size: "s-2",
+    image: "/canvas/Lamda_logo.png",
+    label: "Lamda · logo",
+  },
 ];
 
 const COMPLETED_PROJECTS: Project[] = [
   {
-    n: "05",
+    n: "06",
     year: "2025",
     name: "UCDFS",
     cat: "Formula Student",
@@ -164,7 +174,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "UCDFS · Silverstone, E135",
   },
   {
-    n: "06",
+    n: "07",
     year: "2025",
     name: "ExamEasy",
     cat: "AI Tutor · Leaving Cert",
@@ -177,7 +187,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "ExamEasy · all subjects",
   },
   {
-    n: "07",
+    n: "08",
     year: "2025",
     name: "Braille Reader",
     cat: "Accessibility",
@@ -189,7 +199,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Braille Reader · prototype",
   },
   {
-    n: "08",
+    n: "09",
     year: "2025",
     name: "Ventria",
     cat: "Health · Apple Watch",
@@ -202,7 +212,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Medathon · 27 Feb 2026",
   },
   {
-    n: "09",
+    n: "10",
     year: "2024",
     name: "Solid Works IDE",
     cat: "Shelved · Cloud Tooling",
@@ -215,7 +225,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "SolidWorks · IDE",
   },
   {
-    n: "10",
+    n: "11",
     year: "2025",
     name: "Movinnit.ai",
     cat: "AI · Relocation",
@@ -228,7 +238,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Movinnit.ai",
   },
   {
-    n: "11",
+    n: "12",
     year: "2023",
     name: "Vex V5 Robotics",
     cat: "Competition Robotics",
@@ -241,7 +251,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/vex-v5.png",
   },
   {
-    n: "12",
+    n: "13",
     year: "2024",
     name: "Model Jet Engine",
     cat: "Workshop · Hands-on",
@@ -253,7 +263,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Jet engine v1 · scrap-built",
   },
   {
-    n: "13",
+    n: "14",
     year: "2023",
     name: "Dukes Schools Competition",
     cat: "Best Engineered Solution",
@@ -263,7 +273,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Dukes · winners' stage",
   },
   {
-    n: "14",
+    n: "15",
     year: "2024",
     name: "Build Space S5",
     cat: "Nights & Weekends",
@@ -275,7 +285,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Buildspace · S5",
   },
   {
-    n: "15",
+    n: "16",
     year: "2023",
     name: "TDI Challenge",
     cat: "Signing Glove",
@@ -288,7 +298,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Signing glove · CAD",
   },
   {
-    n: "16",
+    n: "17",
     year: "2023",
     name: "TEDI London",
     cat: "Eco Lotus · Award",
@@ -300,7 +310,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/eco-lotus.png",
   },
   {
-    n: "17",
+    n: "18",
     year: "2023",
     name: "V6 Engine",
     cat: "CAD Deep-Dive",
@@ -348,13 +358,15 @@ function AboutSection() {
         </div>
         <div className="now-body">
           <p>building rockets for Eirspace </p>
-          <p>Zenemic (event-planning app) is in beta, and the</p>
-          <p>vertically-deployed drone is on the bench.</p>
+          <p>Zenemic (event-planning app) is in beta, the</p>
+          <p>vertically-deployed drone is on the bench,</p>
+          <p>and Lamda is just getting started.</p>
         </div>
         <div className="now-tags">
           <span>Eirspace</span>
           <span>UCDFS</span>
           <span>Zenemic</span>
+          <span>Lamda</span>
           <span>Dublin</span>
         </div>
       </div>
