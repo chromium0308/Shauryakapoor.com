@@ -113,36 +113,33 @@ const CURRENT_PROJECTS: Project[] = [
   {
     n: "02",
     year: "Now · 2026",
-    name: "Zenemic",
-    cat: "Event-Planning App",
-    desc: "An event planning assistance app that simplifies organising and managing events.",
-    tag: "React Native · Expo · Swift",
-    link: "In beta →",
+    name: "Docking Drone",
+    cat: "Hardware · Self-Docking",
+    desc: "A drone that self-docks to its charging station using a magnetic hinge built into the dock.",
+    tag: "Solidworks · Arduino",
+    link: "Build log →",
     size: "s-2",
-    image: "/assets/zenemic.png",
-    label: "Zenemic · iOS",
+    image: "/assets/vdd.jpg",
+    label: "Docking drone · concept",
   },
   {
     n: "03",
     year: "Now · 2026",
-    name: "Self Docking Drone",
-    cat: "Hardware · Self-Docking",
-    desc: "A drone that deploys from a vertical surface and self-docks to a charging station using a magnetic hinge built into the dock.",
-    tag: "Solidworks · Arduino",
-    link: "Build log →",
+    name: "DIY WiFi Pineapple",
+    cat: "Security · WiFi",
+    desc: "A homemade take on the WiFi Pineapple — a wireless-network auditing rig for hands-on, authorised penetration testing and security research.",
     size: "s-3",
-    image: "/assets/vdd.jpg",
-    label: "Self-docking drone · concept",
+    image: "/assets/pineapple.jpg",
+    label: "DIY WiFi Pineapple · build in progress",
   },
   {
     n: "04",
     year: "Now · 2026",
-    name: "Lamda",
+    name: "Application Sharer",
     cat: "In Progress",
-    desc: "Latest project on the bench — more details coming soon.",
+    desc: "A tool for sharing applications across devices — early days on the bench, more details coming soon.",
     size: "s-3",
-    image: "/canvas/Lamda_logo.png",
-    label: "Lamda · logo",
+    label: "Application Sharer · in progress",
   },
   {
     n: "05",
@@ -334,6 +331,18 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/v6-engine.png",
     label: "V6 · wireframe render",
   },
+  {
+    n: "20",
+    year: "2026",
+    name: "Zenemic",
+    cat: "Shelved · Event-Planning App",
+    desc: "An event planning assistance app that simplifies organising and managing events.",
+    tag: "React Native · Expo · Swift",
+    size: "s-2",
+    shelved: true,
+    image: "/assets/zenemic.png",
+    label: "Zenemic · iOS",
+  },
 ];
 
 function AboutSection() {
@@ -367,19 +376,18 @@ function AboutSection() {
       <div className="now-card">
         <div className="now-head">
           <div className="now-title">★ Currently Working On</div>
-          <div className="now-date">Updated · May 2026</div>
+          <div className="now-date">Updated · July 2026</div>
         </div>
         <div className="now-body">
-          <p>building rockets for Eirspace </p>
-          <p>Zenemic (event-planning app) is in beta, the</p>
-          <p>vertically-deployed drone is on the bench,</p>
-          <p>and Lamda is just getting started.</p>
+          <p>building rockets for Eirspace,</p>
+          <p>the docking drone is on the bench, and a</p>
+          <p>DIY WiFi Pineapple and</p>
+          <p>application sharer</p>
         </div>
         <div className="now-tags">
           <span>Eirspace</span>
           <span>UCDFS</span>
-          <span>Zenemic</span>
-          <span>Lamda</span>
+          <span>Docking Drone</span>
           <span>Dublin</span>
         </div>
       </div>
