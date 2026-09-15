@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #070707; }
+  * { box-sizing: border-box; }
+  a { color:#3b8eea; text-decoration:none; }
+  a:hover { color:#6aa9f0; }
+  @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+  @keyframes drift { from{background-position:0 0} to{background-position:60px 60px} }
+  @keyframes scan { from{transform:translateY(-100%)} to{transform:translateY(100%)} }
+  @keyframes shoot { 0%{opacity:0; transform:translate(0,0) rotate(18deg)} 3%{opacity:1} 12%{opacity:1; transform:translate(360px,116px) rotate(18deg)} 14%,100%{opacity:0} }
+</style>
+</helmet>
+<section style="padding:56px 56px 72px; font-family:'JetBrains Mono', monospace; background:#070707;">
+  <div style="color:#cccccc; font-size:22px; font-weight:700; margin-bottom:6px;">Turn 1 — terminal background options</div>
+  <div style="color:#767676; font-size:14px; max-width:770px; margin-bottom:40px; line-height:1.6;">Backgrounds for the terminal body — same dark palette, same text colors. Content is illustrative. Reference an id (<a href="#1a">1a</a>–<a href="#1f">1f</a>) and I'll apply it live.</div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:44px; align-items:flex-start;">
+
+    <!-- 1a — Deep radial glow -->
+    <div id="1a" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1a</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Deep radial glow</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Subtle top-center glow fading to near-black. Adds depth without texture. Safe &amp; classy.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="height:210px; padding:16px 18px; background:radial-gradient(130% 100% at 50% -10%, #17140f 0%, #0e0d0b 55%, #0a0a09 100%); font-size:13.5px; line-height:1.6;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+          <div style="height:8px;"></div>
+          <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+          <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+          <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1b — Dot grid -->
+    <div id="1b" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1b</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Dot grid</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Faint evenly-spaced dots — quiet texture that reads as graph paper / engineering. Fits the maker vibe.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="height:210px; padding:16px 18px; background:#0c0c0c; background-image:radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size:22px 22px; font-size:13.5px; line-height:1.6;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+          <div style="height:8px;"></div>
+          <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+          <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+          <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1c — CRT scanlines -->
+    <div id="1c" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1c</span><span style="color:#cccccc; font-size:15px; font-weight:700;">CRT scanlines</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Horizontal scanline overlay + a slow moving sweep. Retro-terminal character; a little more "effect".</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="position:relative; height:210px; padding:16px 18px; background:#0b0d0b; font-size:13.5px; line-height:1.6; overflow:hidden;">
+          <div style="position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px, rgba(0,0,0,0.25) 3px); z-index:2;"></div>
+          <div style="position:absolute; left:0; right:0; height:60px; background:linear-gradient(rgba(22,198,12,0.06), transparent); z-index:1; animation:scan 6s linear infinite;"></div>
+          <div style="position:relative; z-index:3;">
+            <div style="color:#16c60c; text-shadow:0 0 8px rgba(22,198,12,0.4);">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+            <div style="height:8px;"></div>
+            <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+            <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+            <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1d — Blueprint grid -->
+    <div id="1d" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1d</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Blueprint grid</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Fine ruled grid with a stronger major line — CAD/engineering blueprint feel. On-brand for a builder.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="height:210px; padding:16px 18px; background-color:#0a0c0e; background-image:linear-gradient(rgba(59,142,234,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(59,142,234,0.07) 1px, transparent 1px), linear-gradient(rgba(59,142,234,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(59,142,234,0.14) 1px, transparent 1px); background-size:20px 20px, 20px 20px, 100px 100px, 100px 100px; font-size:13.5px; line-height:1.6;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+          <div style="height:8px;"></div>
+          <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+          <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+          <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1e — Drifting matrix chars -->
+    <div id="1e" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1e</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Drifting glyph field</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Very faint monospace glyphs slowly drifting behind the text. Alive but restrained — not full "matrix".</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="position:relative; height:210px; padding:16px 18px; background:#0a0c0a; overflow:hidden; font-size:13.5px; line-height:1.6;">
+          <div style="position:absolute; inset:-40px; pointer-events:none; color:rgba(22,198,12,0.05); font-size:15px; line-height:20px; letter-spacing:6px; white-space:pre-wrap; word-break:break-all; animation:drift 8s linear infinite; z-index:0;">01001010 11 010 001101 10 0101 1100 01 10110 0100 11 0101 001 1010 0011 01 110 0101 1001 0011 1010 0101 1100 0110 1001 0011 0101 1010 0110 0101 1001 0011 1100 0101 1010 0110 1001 0011 0101</div>
+          <div style="position:relative; z-index:1;">
+            <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+            <div style="height:8px;"></div>
+            <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+            <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+            <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1f — Ink wash + vignette -->
+    <div id="1f" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1f</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Ink wash + vignette</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Two soft off-black color blooms (green + blue) with a dark vignette. Atmospheric, no visible pattern.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="height:210px; padding:16px 18px; background:radial-gradient(60% 80% at 12% 20%, rgba(22,198,12,0.09), transparent 60%), radial-gradient(70% 90% at 100% 100%, rgba(59,142,234,0.10), transparent 55%), radial-gradient(120% 120% at 50% 50%, #101010 40%, #070707 100%); font-size:13.5px; line-height:1.6;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+          <div style="height:8px;"></div>
+          <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+          <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+          <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1g — Starfield -->
+    <div id="1g" style="width:520px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1g</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Starfield</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:14px; line-height:1.55;">Realistic sky — layered depth, a faint Milky-Way haze, natural star-color temperature (blue-white to amber), soft twinkling and a rare shooting star. Deep space-black base.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="position:relative; height:210px; padding:16px 18px; overflow:hidden; font-size:13.5px; line-height:1.6; background:radial-gradient(130% 120% at 72% -12%, #0b0f18 0%, #070a10 50%, #040507 100%);">
+          <div style="position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0.5; background:radial-gradient(60% 30% at 30% 70%, rgba(120,140,200,0.10), transparent 70%), radial-gradient(50% 40% at 75% 25%, rgba(150,130,170,0.08), transparent 70%); filter:blur(6px);"></div>
+          <div style="position:absolute; inset:-60px; pointer-events:none; z-index:0; animation:drift 160s linear infinite; background-repeat:repeat; background-size:260px 260px; background-image:
+            radial-gradient(0.6px 0.6px at 40px 30px, rgba(255,255,255,0.45), transparent 60%),
+            radial-gradient(0.6px 0.6px at 130px 80px, rgba(210,225,255,0.4), transparent 60%),
+            radial-gradient(0.5px 0.5px at 200px 160px, rgba(255,245,230,0.4), transparent 60%),
+            radial-gradient(0.6px 0.6px at 90px 210px, rgba(255,255,255,0.35), transparent 60%),
+            radial-gradient(0.5px 0.5px at 230px 40px, rgba(255,255,255,0.4), transparent 60%),
+            radial-gradient(0.6px 0.6px at 20px 130px, rgba(200,215,255,0.35), transparent 60%);"></div>
+          <div style="position:absolute; inset:-40px; pointer-events:none; z-index:0; animation:drift 90s linear infinite; background-repeat:repeat; background-size:200px 200px; background-image:
+            radial-gradient(1px 1px at 30px 40px, rgba(255,255,255,0.85), transparent 55%),
+            radial-gradient(1.1px 1.1px at 120px 90px, rgba(255,240,220,0.8), transparent 55%),
+            radial-gradient(1px 1px at 80px 150px, rgba(200,220,255,0.8), transparent 55%),
+            radial-gradient(0.9px 0.9px at 170px 30px, rgba(255,255,255,0.7), transparent 55%),
+            radial-gradient(1px 1px at 150px 170px, rgba(255,235,210,0.7), transparent 55%);"></div>
+          <div style="position:absolute; top:30px; left:150px; width:2.5px; height:2.5px; border-radius:50%; background:#fff; box-shadow:0 0 4px 1px rgba(255,255,255,0.9), 0 0 9px 2px rgba(180,205,255,0.5); z-index:0; animation:blink 3.6s ease-in-out infinite;"></div>
+          <div style="position:absolute; top:150px; left:60px; width:2px; height:2px; border-radius:50%; background:#fff6ea; box-shadow:0 0 4px 1px rgba(255,240,220,0.9), 0 0 8px 2px rgba(255,210,160,0.4); z-index:0; animation:blink 5.2s ease-in-out infinite;"></div>
+          <div style="position:absolute; top:70px; left:250px; width:1.6px; height:1.6px; border-radius:50%; background:#dfe9ff; box-shadow:0 0 4px 1px rgba(200,215,255,0.85); z-index:0; animation:blink 4.4s ease-in-out infinite;"></div>
+          <div style="position:absolute; top:20px; left:-60px; width:120px; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.85)); transform:rotate(18deg); border-radius:1px; z-index:0; opacity:0; animation:shoot 9s ease-in 3s infinite;"></div>
+          <div style="position:relative; z-index:1;">
+            <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25.</div>
+            <div style="height:8px;"></div>
+            <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+            <div style="display:flex; gap:18px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+            <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#ccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

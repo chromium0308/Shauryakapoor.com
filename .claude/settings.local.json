@@ -23,7 +23,17 @@
       "Bash(npm run *)",
       "Bash(curl -sS http://localhost:3000/ -o /tmp/home.html -w \"HTTP %{http_code}\\\\n\")",
       "Bash(curl -sS http://localhost:3000/experience -o /tmp/exp.html -w \"HTTP %{http_code}\\\\n\")",
-      "Bash(curl -sS http://localhost:3000/projects -o /tmp/proj.html -w \"HTTP %{http_code}\\\\n\")"
+      "Bash(curl -sS http://localhost:3000/projects -o /tmp/proj.html -w \"HTTP %{http_code}\\\\n\")",
+      "PowerShell(npm run *)",
+      "Bash(git rm *)",
+      "PowerShell(Copy-Item *)",
+      "Bash(echo \"\\(grep exit: $?\\)\")",
+      "Bash(npx next *)",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(node -e ' *)",
+      "PowerShell(\\(Get-CimInstance Win32_Process -Filter 'ProcessId=51380'\\).CommandLine)",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "PowerShell(Stop-Process *)"
     ]
   }
 }

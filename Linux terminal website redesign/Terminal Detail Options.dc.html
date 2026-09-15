@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #070707; }
+  * { box-sizing: border-box; }
+  a { color:#3b8eea; text-decoration:none; }
+  a:hover { color:#6aa9f0; }
+  @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+</style>
+</helmet>
+<section style="padding:56px 56px 72px; font-family:'JetBrains Mono', monospace; background:#070707;">
+  <div style="color:#cccccc; font-size:22px; font-weight:700; margin-bottom:6px;">Turn 1 — detail packs (same aesthetic, less plain)</div>
+  <div style="color:#767676; font-size:14px; max-width:770px; margin-bottom:40px; line-height:1.6;">Small layered enhancements to the terminal we already have — no palette or layout change. Mix &amp; match. Reference an id in chat (<a href="#1a">1a</a> / <a href="#1b">1b</a> / <a href="#1c">1c</a> / <a href="#1d">1d</a>) and I'll add it to the live terminal.</div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:44px; align-items:flex-start;">
+
+    <!-- 1a — status bar + accent hairline -->
+    <div id="1a" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1a</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Status bar + accent hairline</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;">A 2px gradient hairline at the very top and a slim footer showing path · dir count · clock. Frames the window, adds life at the edges.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="height:2px; background:linear-gradient(90deg,#16c60c,#3b8eea 60%,transparent);"></div>
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12.5px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:13px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding:18px 20px; background:#0c0c0c; font-size:14px; line-height:1.65;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25 · Eirspace.</div>
+          <div style="height:8px;"></div>
+          <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+          <div style="display:flex; gap:20px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; background:#161616; border-top:1px solid #242424; color:#6b6b6b; font-size:11.5px; padding:4px 14px;"><span style="color:#16c60c;">~</span><span>3 dirs</span><span>21:04 · UTF-8</span></div>
+      </div>
+    </div>
+
+    <!-- 1b — ambient depth + rhythm -->
+    <div id="1b" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1b</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Ambient depth + rhythm</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;">A faint dotted grid + corner vignette give the void some texture; a soft glow on the prompt name and hairline separators between command blocks add rhythm.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12.5px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:13px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="position:relative; padding:18px 20px; background:radial-gradient(120% 90% at 50% 0%, #131313 0%, #0c0c0c 60%); font-size:14px; line-height:1.65;">
+          <div style="position:absolute; inset:0; pointer-events:none; background-image:radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px); background-size:22px 22px;"></div>
+          <div style="position:relative;">
+            <div style="color:#16c60c; text-shadow:0 0 10px rgba(22,198,12,0.35);">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25 · Eirspace.</div>
+            <div style="border-top:1px solid #1a1a1a; margin:12px 0;"></div>
+            <div><span style="color:#16c60c; text-shadow:0 0 8px rgba(22,198,12,0.4);">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> ls</div>
+            <div style="display:flex; gap:20px; color:#3b8eea; margin-top:2px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+            <div style="border-top:1px solid #1a1a1a; margin:12px 0;"></div>
+            <div><span style="color:#16c60c; text-shadow:0 0 8px rgba(22,198,12,0.4);">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#cccccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1c — neofetch boot header -->
+    <div id="1c" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1c</span><span style="color:#cccccc; font-size:15px; font-weight:700;">neofetch boot header</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;">A compact info card on launch — like <span style="color:#9a9a9a;">neofetch</span> — with a monogram, key facts, and a palette strip. Instant personality, still pure terminal.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12.5px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:13px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding:18px 20px; background:#0c0c0c; font-size:13.5px; line-height:1.6;">
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="width:96px; height:96px; border:1px solid #2f2f2f; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#16c60c; font-weight:700; font-size:34px; letter-spacing:2px; flex-shrink:0; background:repeating-linear-gradient(45deg,#0f0f0f,#0f0f0f 7px,#121212 7px,#121212 14px);">SK</div>
+            <div style="min-width:0;">
+              <div><span style="color:#16c60c; font-weight:700;">shaurya</span><span style="color:#767676;">@</span><span style="color:#16c60c; font-weight:700;">portfolio</span></div>
+              <div style="color:#2f2f2f;">─────────────────────────</div>
+              <div><span style="color:#3b8eea;">role</span><span style="color:#767676;">:</span> <span style="color:#cccccc;">18 y/o builder</span></div>
+              <div><span style="color:#3b8eea;">now</span><span style="color:#767676;">:</span> <span style="color:#cccccc;">Eirspace rocketry · L1 cert</span></div>
+              <div><span style="color:#3b8eea;">stack</span><span style="color:#767676;">:</span> <span style="color:#cccccc;">SolidWorks · React Native · Python</span></div>
+              <div><span style="color:#3b8eea;">langs</span><span style="color:#767676;">:</span> <span style="color:#cccccc;">EN · HI · DE(B2)</span></div>
+              <div style="display:flex; gap:5px; margin-top:8px;"><span style="width:14px; height:14px; background:#16c60c;"></span><span style="width:14px; height:14px; background:#3b8eea;"></span><span style="width:14px; height:14px; background:#e74856;"></span><span style="width:14px; height:14px; background:#cccccc;"></span><span style="width:14px; height:14px; background:#767676;"></span></div>
+            </div>
+          </div>
+          <div style="height:12px;"></div>
+          <div style="color:#9a9a9a;">Type 'hi' to say hello, then 'ls' to look around.</div>
+          <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#cccccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1d — typed timestamps + exit codes -->
+    <div id="1d" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1d</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Timestamps + exit codes</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;">Each command gets a faint right-aligned timestamp and a tiny ✓/✗ exit marker on the prompt — a small data detail that reads like a real shell log.</div>
+      <div style="border-radius:8px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="display:flex; align-items:center; padding:8px 14px; background:#2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12.5px;">shaurya@portfolio: ~</span><span style="color:#a8a8a8; font-size:13px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding:18px 20px; background:#0c0c0c; font-size:14px; line-height:1.65;">
+          <div style="color:#16c60c;">Welcome — Shaurya Kapoor's terminal.</div>
+          <div style="color:#9a9a9a;">18 y/o builder · Web Summit Scholar '25 · Eirspace.</div>
+          <div style="height:8px;"></div>
+          <div style="display:flex; align-items:baseline;"><span style="color:#16c60c;">✓</span><span style="color:#16c60c; margin-left:6px;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span><span style="margin-left:6px;">ls</span><span style="flex:1;"></span><span style="color:#4a4a4a; font-size:11.5px;">21:04:12</span></div>
+          <div style="display:flex; gap:20px; color:#3b8eea; margin-top:2px; padding-left:18px;"><span>about/</span><span>projects/</span><span>experience/</span></div>
+          <div style="display:flex; align-items:baseline; margin-top:2px;"><span style="color:#16c60c;">✓</span><span style="color:#16c60c; margin-left:6px;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~</span><span style="color:#767676;">$</span><span style="margin-left:6px; display:inline-block; width:8px; height:1.05em; background:#cccccc; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

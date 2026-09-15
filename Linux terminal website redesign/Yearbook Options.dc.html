@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #070707; }
+  * { box-sizing: border-box; }
+  a { color: #3b8eea; }
+  a:hover { color: #6aa9f0; }
+</style>
+</helmet>
+<section style="padding: 56px 56px 72px; font-family: 'JetBrains Mono', monospace; background: #070707;">
+  <div style="color: #cccccc; font-size: 22px; font-weight: 700; margin-bottom: 6px;">Turn 1 — yearbook.txt, dressed up</div>
+  <div style="color: #767676; font-size: 14px; max-width: 720px; margin-bottom: 40px; line-height: 1.6;">Three terminal-native layouts. Each still renders as monospace terminal output, but applies contrast, repetition, alignment &amp; proximity. Reference an id in chat (e.g. <a href="#1b">1b</a>) to pick one and I'll wire it into <span style="color:#cccccc;">cat experience/yearbook.txt</span>.</div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+
+    <!-- OPTION 1a — Timeline rail -->
+    <div id="1a" style="width: 560px;">
+      <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;">
+        <span style="color: #16c60c; font-size: 15px; font-weight: 700;">1a</span>
+        <span style="color: #cccccc; font-size: 15px; font-weight: 700;">Timeline rail</span>
+      </div>
+      <div style="color: #767676; font-size: 12.5px; margin-bottom: 16px; line-height: 1.55;"><b style="color:#9a9a9a;">Alignment:</b> fixed date gutter + a │ rail. <b style="color:#9a9a9a;">Proximity:</b> each role/org/desc bundled tight, big gap between. <b style="color:#9a9a9a;">Contrast:</b> bright role vs dim body.</div>
+      <div style="background: #0c0c0c; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05); overflow: hidden;">
+        <div style="display: flex; align-items: center; padding: 8px 14px; background: #2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~/experience</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding: 18px 20px; font-size: 13px; line-height: 1.55;">
+          <div style="color:#767676; margin-bottom:14px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~/experience</span>$ cat yearbook.txt</div>
+          <div style="display:flex; flex-direction:column; gap:20px;">
+
+            <div style="display:grid; grid-template-columns: 130px 1fr; column-gap:16px;">
+              <div style="color:#3b8eea; text-align:right;">Jan–Jun 2026</div>
+              <div style="border-left:2px solid #2f2f2f; padding-left:16px; position:relative;">
+                <div style="position:absolute; left:-5px; top:6px; width:8px; height:8px; border-radius:50%; background:#16c60c;"></div>
+                <div style="color:#eaeaea; font-weight:700;">AI Development Intern</div>
+                <div style="color:#9a9a9a;">Arcus Innovation Studios · 360 Social Impact Studios</div>
+                <div style="color:#767676; margin-top:4px;">Combined AI with social-impact initiatives.</div>
+                <div style="display:flex; gap:8px; margin-top:8px;"><span style="color:#3b8eea; border:1px solid #26364a; padding:1px 8px; border-radius:3px; font-size:11.5px;">Intern</span><span style="color:#3b8eea; border:1px solid #26364a; padding:1px 8px; border-radius:3px; font-size:11.5px;">AI</span></div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 130px 1fr; column-gap:16px;">
+              <div style="color:#3b8eea; text-align:right;">2025</div>
+              <div style="border-left:2px solid #2f2f2f; padding-left:16px; position:relative;">
+                <div style="position:absolute; left:-5px; top:6px; width:8px; height:8px; border-radius:50%; background:#16c60c;"></div>
+                <div style="color:#eaeaea; font-weight:700;">Web Summit 2025 Scholar</div>
+                <div style="color:#9a9a9a;">Web Summit '25 · Lisbon</div>
+                <div style="color:#767676; margin-top:4px;">Chairperson ticket (worth €25,000); access to global tech leaders.</div>
+                <div style="display:flex; gap:8px; margin-top:8px;"><span style="color:#3b8eea; border:1px solid #26364a; padding:1px 8px; border-radius:3px; font-size:11.5px;">Scholar</span></div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 130px 1fr; column-gap:16px;">
+              <div style="color:#3b8eea; text-align:right;">Sep 2025–Jan 2026</div>
+              <div style="border-left:2px solid #2f2f2f; padding-left:16px; position:relative;">
+                <div style="position:absolute; left:-5px; top:6px; width:8px; height:8px; border-radius:50%; background:#16c60c;"></div>
+                <div style="color:#eaeaea; font-weight:700;">Engineering (B.Eng)</div>
+                <div style="color:#9a9a9a;">University College Dublin</div>
+                <div style="color:#767676; margin-top:4px;">Coursework, the workshop, and evening side-projects. Dropped out.</div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 130px 1fr; column-gap:16px;">
+              <div style="color:#3b8eea; text-align:right;">2022</div>
+              <div style="border-left:2px solid #2f2f2f; padding-left:16px; position:relative;">
+                <div style="position:absolute; left:-5px; top:6px; width:8px; height:8px; border-radius:50%; background:#16c60c;"></div>
+                <div style="color:#eaeaea; font-weight:700;">IT Intern</div>
+                <div style="color:#9a9a9a;">Unipol RE</div>
+                <div style="color:#767676; margin-top:4px;">TY work experience shadowing the IT team.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 1b — Boxed cards -->
+    <div id="1b" style="width: 560px;">
+      <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;">
+        <span style="color: #16c60c; font-size: 15px; font-weight: 700;">1b</span>
+        <span style="color: #cccccc; font-size: 15px; font-weight: 700;">Box-drawing cards</span>
+      </div>
+      <div style="color: #767676; font-size: 12.5px; margin-bottom: 16px; line-height: 1.55;"><b style="color:#9a9a9a;">Repetition:</b> identical ┌─┐ card frame each entry. <b style="color:#9a9a9a;">Contrast:</b> inverted title bar. <b style="color:#9a9a9a;">Alignment:</b> date right-flush in every header.</div>
+      <div style="background: #0c0c0c; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05); overflow: hidden;">
+        <div style="display: flex; align-items: center; padding: 8px 14px; background: #2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~/experience</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding: 18px 20px; font-size: 13px; line-height: 1.55;">
+          <div style="color:#767676; margin-bottom:14px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~/experience</span>$ cat yearbook.txt</div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+
+            <div style="border:1px solid #2f2f2f; border-radius:4px; overflow:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#16c60c; color:#062b03; padding:5px 12px; font-weight:700;"><span>AI Development Intern</span><span style="font-weight:400;">Jan–Jun 2026</span></div>
+              <div style="padding:10px 12px;"><div style="color:#cccccc;">Arcus Innovation Studios · 360 Social Impact Studios</div><div style="color:#767676; margin-top:3px;">Combined AI with social-impact initiatives.</div><div style="display:flex; gap:8px; margin-top:8px;"><span style="color:#9a9a9a; background:#161616; padding:1px 8px; border-radius:3px; font-size:11.5px;">Intern</span><span style="color:#9a9a9a; background:#161616; padding:1px 8px; border-radius:3px; font-size:11.5px;">AI</span></div></div>
+            </div>
+
+            <div style="border:1px solid #2f2f2f; border-radius:4px; overflow:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#16c60c; color:#062b03; padding:5px 12px; font-weight:700;"><span>Web Summit 2025 Scholar</span><span style="font-weight:400;">2025</span></div>
+              <div style="padding:10px 12px;"><div style="color:#cccccc;">Web Summit '25 · Lisbon</div><div style="color:#767676; margin-top:3px;">Chairperson ticket (worth €25,000).</div><div style="display:flex; gap:8px; margin-top:8px;"><span style="color:#9a9a9a; background:#161616; padding:1px 8px; border-radius:3px; font-size:11.5px;">Scholar</span></div></div>
+            </div>
+
+            <div style="border:1px solid #2f2f2f; border-radius:4px; overflow:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#16c60c; color:#062b03; padding:5px 12px; font-weight:700;"><span>Engineering (B.Eng)</span><span style="font-weight:400;">Sep 2025–Jan 2026</span></div>
+              <div style="padding:10px 12px;"><div style="color:#cccccc;">University College Dublin</div><div style="color:#767676; margin-top:3px;">Dropped out to build full-time.</div></div>
+            </div>
+
+            <div style="border:1px solid #2f2f2f; border-radius:4px; overflow:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#16c60c; color:#062b03; padding:5px 12px; font-weight:700;"><span>IT Intern</span><span style="font-weight:400;">2022</span></div>
+              <div style="padding:10px 12px;"><div style="color:#cccccc;">Unipol RE</div><div style="color:#767676; margin-top:3px;">TY work experience shadowing the IT team.</div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 1c — Ledger -->
+    <div id="1c" style="width: 560px;">
+      <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;">
+        <span style="color: #16c60c; font-size: 15px; font-weight: 700;">1c</span>
+        <span style="color: #cccccc; font-size: 15px; font-weight: 700;">Ruled ledger</span>
+      </div>
+      <div style="color: #767676; font-size: 12.5px; margin-bottom: 16px; line-height: 1.55;"><b style="color:#9a9a9a;">Alignment:</b> two hard columns split by a rule. <b style="color:#9a9a9a;">Repetition:</b> ── divider + » marker per row. <b style="color:#9a9a9a;">Proximity:</b> label sits directly under its role.</div>
+      <div style="background: #0c0c0c; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05); overflow: hidden;">
+        <div style="display: flex; align-items: center; padding: 8px 14px; background: #2b2b2b;"><span style="flex:1; color:#cfcfcf; font-size:12px;">shaurya@portfolio: ~/experience</span><span style="color:#a8a8a8; font-size:12px; letter-spacing:6px;">&#8211;&#9633;&#10005;</span></div>
+        <div style="padding: 18px 20px; font-size: 13px; line-height: 1.55;">
+          <div style="color:#767676; margin-bottom:14px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#767676;">:</span><span style="color:#3b8eea;">~/experience</span>$ cat yearbook.txt</div>
+
+          <div style="color:#2f2f2f; margin-bottom:12px;">────────────────────────────────────────────</div>
+
+          <div style="display:flex; flex-direction:column; gap:0;">
+
+            <div style="display:grid; grid-template-columns: 108px 1fr; column-gap:0;">
+              <div style="color:#3b8eea; padding-right:14px; border-right:1px solid #2f2f2f; text-align:right; padding-bottom:14px;">Jan 2026<br>Jun 2026</div>
+              <div style="padding-left:16px; padding-bottom:14px;"><div style="color:#eaeaea; font-weight:700;">» AI Development Intern</div><div style="color:#9a9a9a;">Arcus Innovation Studios</div><div style="color:#767676; margin-top:2px;">Combined AI with social-impact initiatives.</div></div>
+            </div>
+
+            <div style="grid-column:1/-1; color:#1c1c1c;">────────────────────────────────────────────</div>
+
+            <div style="display:grid; grid-template-columns: 108px 1fr; column-gap:0;">
+              <div style="color:#3b8eea; padding-right:14px; border-right:1px solid #2f2f2f; text-align:right; padding:14px 14px 14px 0;">2025</div>
+              <div style="padding:14px 0 14px 16px;"><div style="color:#eaeaea; font-weight:700;">» Web Summit 2025 Scholar</div><div style="color:#9a9a9a;">Web Summit '25 · Lisbon</div><div style="color:#767676; margin-top:2px;">Chairperson ticket (worth €25,000).</div></div>
+            </div>
+
+            <div style="grid-column:1/-1; color:#1c1c1c;">────────────────────────────────────────────</div>
+
+            <div style="display:grid; grid-template-columns: 108px 1fr; column-gap:0;">
+              <div style="color:#3b8eea; padding-right:14px; border-right:1px solid #2f2f2f; text-align:right; padding:14px 14px 14px 0;">Sep 2025<br>Jan 2026</div>
+              <div style="padding:14px 0 14px 16px;"><div style="color:#eaeaea; font-weight:700;">» Engineering (B.Eng)</div><div style="color:#9a9a9a;">University College Dublin</div><div style="color:#767676; margin-top:2px;">Dropped out to build full-time.</div></div>
+            </div>
+
+            <div style="grid-column:1/-1; color:#1c1c1c;">────────────────────────────────────────────</div>
+
+            <div style="display:grid; grid-template-columns: 108px 1fr; column-gap:0;">
+              <div style="color:#3b8eea; padding-right:14px; border-right:1px solid #2f2f2f; text-align:right; padding:14px 14px 0 0;">2022</div>
+              <div style="padding:14px 0 0 16px;"><div style="color:#eaeaea; font-weight:700;">» IT Intern</div><div style="color:#9a9a9a;">Unipol RE</div><div style="color:#767676; margin-top:2px;">TY work experience shadowing the IT team.</div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

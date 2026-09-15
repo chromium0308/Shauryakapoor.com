@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #070707; }
+  * { box-sizing: border-box; }
+  a { color: #3b8eea; text-decoration: none; }
+  a:hover { color: #6aa9f0; }
+  @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+</style>
+</helmet>
+<section style="padding: 56px 56px 72px; font-family: 'JetBrains Mono', monospace; background: #070707;">
+  <div style="color:#cccccc; font-size:22px; font-weight:700; margin-bottom:6px;">Turn 1 — terminal skins</div>
+  <div style="color:#767676; font-size:14px; max-width:760px; margin-bottom:40px; line-height:1.6;">Three whole-terminal looks. Same behaviour, different identity. Each leans on contrast, repetition, alignment &amp; proximity. Reference an id in chat (<a href="#1a">1a</a> / <a href="#1b">1b</a> / <a href="#1c">1c</a>) and I'll reskin the live terminal.</div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:44px; align-items:flex-start;">
+
+    <!-- 1a — Editor / status-bar -->
+    <div id="1a" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1a</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Editor + status bar</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;"><b style="color:#9a9a9a;">Alignment:</b> line-number gutter grids everything. <b style="color:#9a9a9a;">Repetition:</b> persistent status bar + accent stripe. <b style="color:#9a9a9a;">Contrast:</b> bright headings on charcoal.</div>
+      <div style="border-radius:9px; overflow:hidden; box-shadow:0 22px 55px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="height:3px; background:linear-gradient(90deg,#16c60c,#3b8eea);"></div>
+        <div style="display:flex; align-items:center; padding:9px 14px; background:#161b22;"><span style="width:9px; height:9px; border-radius:2px; background:#3b8eea; margin-right:10px;"></span><span style="flex:1; color:#c9d1d9; font-size:12.5px;">shaurya@portfolio — ~</span><span style="color:#6e7681; font-size:11px;">bash</span></div>
+        <div style="display:grid; grid-template-columns:44px 1fr; background:#0d1117; font-size:14px; line-height:1.7;">
+          <div style="background:#0b0f14; color:#3a434e; text-align:right; padding:16px 10px 16px 0; user-select:none;">1<br>2<br>3<br>4<br>5<br>6</div>
+          <div style="padding:16px 18px; color:#c9d1d9;">
+            <div style="color:#16c60c; font-weight:500;">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#8b949e;">18 y/o builder · Web Summit Scholar '25 · Eirspace.</div>
+            <div style="height:8px;"></div>
+            <div><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#6e7681;">:</span><span style="color:#3b8eea;">~</span><span style="color:#6e7681;">$</span> ls</div>
+            <div style="display:flex; gap:20px; margin-top:2px;"><span style="color:#3b8eea;">about/</span><span style="color:#3b8eea;">projects/</span><span style="color:#3b8eea;">experience/</span></div>
+            <div style="margin-top:2px;"><span style="color:#16c60c;">shaurya@portfolio</span><span style="color:#6e7681;">:</span><span style="color:#3b8eea;">~</span><span style="color:#6e7681;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#c9d1d9; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; background:#16c60c; color:#04240a; font-size:11.5px; padding:3px 14px; font-weight:500;"><span>~  ·  main</span><span>UTF-8 · 3 dirs · ln 6</span></div>
+      </div>
+    </div>
+
+    <!-- 1b — Amber CRT -->
+    <div id="1b" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1b</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Amber CRT</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;"><b style="color:#9a9a9a;">Contrast:</b> amber phosphor glow on near-black. <b style="color:#9a9a9a;">Repetition:</b> scanlines + boxed frame + uppercase labels. <b style="color:#9a9a9a;">Proximity:</b> tight banner block. Retro identity.</div>
+      <div style="position:relative; border-radius:9px; overflow:hidden; background:#140d00; box-shadow:0 22px 55px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,176,0,0.18), inset 0 0 90px rgba(255,176,0,0.06);">
+        <div style="position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.28) 2px 3px); z-index:2;"></div>
+        <div style="display:flex; align-items:center; padding:9px 14px; background:#1e1400; border-bottom:1px solid rgba(255,176,0,0.2);"><span style="flex:1; color:#ffb000; font-size:12px; letter-spacing:2px; text-shadow:0 0 8px rgba(255,176,0,0.6);">SHAURYA@PORTFOLIO — TTY1</span><span style="color:#a9760a; font-size:11px;">● REC</span></div>
+        <div style="padding:18px 20px; color:#ffb000; font-size:14px; line-height:1.7; text-shadow:0 0 7px rgba(255,176,0,0.55);">
+          <div style="border:1px solid rgba(255,176,0,0.35); padding:10px 12px; margin-bottom:14px;"><div style="letter-spacing:2px;">WELCOME</div><div style="color:#c98f13; font-size:12.5px; margin-top:4px; text-shadow:none;">18 Y/O BUILDER · WEB SUMMIT SCHOLAR '25 · EIRSPACE</div></div>
+          <div><span style="color:#ffd479;">shaurya@portfolio</span>:~$ ls</div>
+          <div style="display:flex; gap:22px; margin-top:2px;"><span>ABOUT/</span><span>PROJECTS/</span><span>EXPERIENCE/</span></div>
+          <div style="margin-top:2px;"><span style="color:#ffd479;">shaurya@portfolio</span>:~$ <span style="display:inline-block; width:9px; height:1.05em; background:#ffb000; box-shadow:0 0 8px rgba(255,176,0,0.8); transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1c — Paper light -->
+    <div id="1c" style="width:660px;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><span style="color:#16c60c; font-size:15px; font-weight:700;">1c</span><span style="color:#cccccc; font-size:15px; font-weight:700;">Paper (light)</span></div>
+      <div style="color:#767676; font-size:12.5px; margin-bottom:16px; line-height:1.55;"><b style="color:#9a9a9a;">Contrast:</b> dark ink on warm paper. <b style="color:#9a9a9a;">Alignment:</b> coloured left rail anchors each line. <b style="color:#9a9a9a;">Repetition:</b> consistent tag chips. Clean daytime mode.</div>
+      <div style="border-radius:9px; overflow:hidden; box-shadow:0 22px 55px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.15);">
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#e7e2d6;"><span style="width:11px; height:11px; border-radius:50%; background:#e0655a;"></span><span style="width:11px; height:11px; border-radius:50%; background:#dbab4a;"></span><span style="width:11px; height:11px; border-radius:50%; background:#5aa469;"></span><span style="flex:1; text-align:center; color:#6b6153; font-size:12px;">shaurya@portfolio — ~</span><span style="width:52px;"></span></div>
+        <div style="display:grid; grid-template-columns:5px 1fr; background:#f4efe4;">
+          <div style="background:#2f7d4f;"></div>
+          <div style="padding:18px 20px; color:#2c2a26; font-size:14px; line-height:1.7;">
+            <div style="color:#2f7d4f; font-weight:700;">Welcome — Shaurya Kapoor's terminal.</div>
+            <div style="color:#78706220; color:#6b6153;">18 y/o builder · Web Summit Scholar '25 · Eirspace.</div>
+            <div style="height:8px;"></div>
+            <div><span style="color:#2f7d4f; font-weight:700;">shaurya@portfolio</span><span style="color:#a79f8f;">:</span><span style="color:#b06a2c; font-weight:700;">~</span><span style="color:#a79f8f;">$</span> ls</div>
+            <div style="display:flex; gap:10px; margin-top:6px;"><span style="color:#b06a2c; border:1px solid #d9cfba; padding:1px 9px; border-radius:4px; font-size:12.5px;">about/</span><span style="color:#b06a2c; border:1px solid #d9cfba; padding:1px 9px; border-radius:4px; font-size:12.5px;">projects/</span><span style="color:#b06a2c; border:1px solid #d9cfba; padding:1px 9px; border-radius:4px; font-size:12.5px;">experience/</span></div>
+            <div style="margin-top:8px;"><span style="color:#2f7d4f; font-weight:700;">shaurya@portfolio</span><span style="color:#a79f8f;">:</span><span style="color:#b06a2c; font-weight:700;">~</span><span style="color:#a79f8f;">$</span> <span style="display:inline-block; width:8px; height:1.05em; background:#2c2a26; transform:translateY(2px); animation:blink 1.05s step-end infinite;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

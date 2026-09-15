@@ -113,17 +113,27 @@ const CURRENT_PROJECTS: Project[] = [
   {
     n: "02",
     year: "Now · 2026",
-    name: "Docking Drone",
-    cat: "Hardware · Self-Docking",
-    desc: "A drone that self-docks to its charging station using a magnetic hinge built into the dock.",
-    tag: "Solidworks · Arduino",
-    link: "Build log →",
+    name: "L1 Rocket",
+    cat: "Rocketry · Level 1 Cert",
+    desc: "A Level 1 high-power rocket built from scratch, flying a custom nosecone and my own S.R.A.D. flight computer in the av-bay.",
+    tag: "Open Rocket · Solidworks",
     size: "s-2",
-    image: "/assets/vdd.jpg",
-    label: "Docking drone · concept",
+    image: "/assets/Rocket.jpeg",
+    label: "L1 rocket · airframe & nosecone",
   },
   {
     n: "03",
+    year: "Now · 2026",
+    name: "S.R.A.D. Flight Computer",
+    cat: "Avionics · Rocketry",
+    desc: "A student-researched-and-designed flight computer for the L1 rocket — BMP280 barometric pressure and an MPU-6050 IMU for altitude, velocity and acceleration, plus GNSS, UV index, strain gauges and a dual display.",
+    tag: "ESP32 · Arduino · C++",
+    size: "s-3",
+    image: "/assets/Flight_comp.jpeg",
+    label: "Flight computer · bench test",
+  },
+  {
+    n: "04",
     year: "Now · 2026",
     name: "DIY WiFi Pineapple",
     cat: "Security · WiFi",
@@ -131,15 +141,6 @@ const CURRENT_PROJECTS: Project[] = [
     size: "s-3",
     image: "/assets/pineapple.jpg",
     label: "DIY WiFi Pineapple · build in progress",
-  },
-  {
-    n: "04",
-    year: "Now · 2026",
-    name: "Application Sharer",
-    cat: "In Progress",
-    desc: "A tool for sharing applications across devices — early days on the bench, more details coming soon.",
-    size: "s-3",
-    label: "Application Sharer · in progress",
   },
   {
     n: "05",
@@ -159,6 +160,17 @@ const COMPLETED_PROJECTS: Project[] = [
   {
     n: "06",
     year: "2026",
+    name: "Demos Anon",
+    cat: "Demo Night · Talk",
+    desc: "Presented the L1 rocket and its S.R.A.D. flight computer on stage — walking a room through solid-motor composition, the avionics stack, and the data it pulls down in flight.",
+    tag: "Rocketry · Avionics",
+    size: "s-6",
+    image: "/assets/Demo.jpeg",
+    label: "Demos Anon · on stage",
+  },
+  {
+    n: "07",
+    year: "2026",
     name: "Pairs Trading AAPL & SPY",
     cat: "Quant · Statistical Arbitrage",
     desc: "A statistical arbitrage strategy that trades the mean-reverting spread between AAPL and SPY, backtested on historical price data.",
@@ -170,7 +182,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Pairs Trading · AAPL / SPY",
   },
   {
-    n: "07",
+    n: "08",
     year: "2025",
     name: "Ventria",
     cat: "Health · Apple Watch",
@@ -183,7 +195,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Medathon · 27 Feb 2026",
   },
   {
-    n: "08",
+    n: "09",
     year: "2025",
     name: "UCDFS",
     cat: "Formula Student",
@@ -197,7 +209,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "UCDFS · Silverstone, E135",
   },
   {
-    n: "09",
+    n: "10",
     year: "2026",
     name: "ExamEasy",
     cat: "AI Tutor · Leaving Cert",
@@ -210,7 +222,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "ExamEasy · all subjects",
   },
   {
-    n: "10",
+    n: "11",
     year: "2026",
     name: "Braille Reader",
     cat: "Accessibility",
@@ -222,7 +234,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Braille Reader · prototype",
   },
   {
-    n: "11",
+    n: "12",
     year: "2024",
     name: "Model Jet Engine",
     cat: "Workshop · Hands-on",
@@ -234,7 +246,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Jet engine v1 · scrap-built",
   },
   {
-    n: "12",
+    n: "13",
     year: "2026",
     name: "Movinnit.ai",
     cat: "AI · Relocation",
@@ -247,7 +259,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Movinnit.ai",
   },
   {
-    n: "13",
+    n: "14",
     year: "2024",
     name: "Solid Works IDE",
     cat: "Shelved · Cloud Tooling",
@@ -260,7 +272,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "SolidWorks · IDE",
   },
   {
-    n: "14",
+    n: "15",
     year: "2023",
     name: "Vex V5 Robotics",
     cat: "Competition Robotics",
@@ -273,7 +285,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/vex-v5.png",
   },
   {
-    n: "15",
+    n: "16",
     year: "2023",
     name: "Dukes Schools Competition",
     cat: "Best Engineered Solution",
@@ -283,7 +295,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Dukes · winners' stage",
   },
   {
-    n: "16",
+    n: "17",
     year: "2024",
     name: "Build Space S5",
     cat: "Nights & Weekends",
@@ -295,7 +307,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Buildspace · S5",
   },
   {
-    n: "17",
+    n: "18",
     year: "2023",
     name: "TDI Challenge",
     cat: "Signing Glove",
@@ -308,7 +320,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Signing glove · CAD",
   },
   {
-    n: "18",
+    n: "19",
     year: "2023",
     name: "TEDI London",
     cat: "Eco Lotus · Award",
@@ -320,7 +332,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/eco-lotus.png",
   },
   {
-    n: "19",
+    n: "20",
     year: "2023",
     name: "V6 Engine",
     cat: "CAD Deep-Dive",
@@ -332,16 +344,16 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "V6 · wireframe render",
   },
   {
-    n: "20",
+    n: "21",
     year: "2026",
-    name: "Zenemic",
-    cat: "Shelved · Event-Planning App",
-    desc: "An event planning assistance app that simplifies organising and managing events.",
-    tag: "React Native · Expo · Swift",
-    size: "s-2",
+    name: "Docking Drone",
+    cat: "Shelved · Self-Docking Hardware",
+    desc: "A drone that self-docks to its charging station using a magnetic hinge built into the dock.",
+    tag: "Solidworks · Arduino",
+    size: "s-3",
     shelved: true,
-    image: "/assets/zenemic.png",
-    label: "Zenemic · iOS",
+    image: "/assets/vdd.jpg",
+    label: "Docking drone · concept",
   },
 ];
 
@@ -376,18 +388,18 @@ function AboutSection() {
       <div className="now-card">
         <div className="now-head">
           <div className="now-title">★ Currently Working On</div>
-          <div className="now-date">Updated · July 2026</div>
+          <div className="now-date">Updated · September 2026</div>
         </div>
         <div className="now-body">
           <p>building rockets for Eirspace,</p>
-          <p>the docking drone is on the bench, and a</p>
-          <p>DIY WiFi Pineapple and</p>
-          <p>application sharer</p>
+          <p>flying an L1 rocket on a flight</p>
+          <p>computer I built myself, and a</p>
+          <p>DIY WiFi Pineapple</p>
         </div>
         <div className="now-tags">
           <span>Eirspace</span>
           <span>UCDFS</span>
-          <span>Docking Drone</span>
+          <span>L1 Rocket</span>
           <span>Dublin</span>
         </div>
       </div>
