@@ -135,30 +135,19 @@ const CURRENT_PROJECTS: Project[] = [
   {
     n: "04",
     year: "Now · 2026",
-    name: "DIY WiFi Pineapple",
-    cat: "Security · WiFi",
-    desc: "A homemade take on the WiFi Pineapple — a wireless-network auditing rig for hands-on, authorised penetration testing and security research.",
+    name: "Galaksija Computer",
+    cat: "Retro Computing · Hardware",
+    desc: "Building and programming the Galaksija 40th Anniversary Edition, a modern revival of Voja Antonić’s 1983 Z80 DIY computer that roughly 8,000 people across Yugoslavia built from a magazine article.",
+    tag: "Z80 · BASIC · Soldering",
     size: "s-3",
-    image: "/assets/pineapple.jpg",
-    label: "DIY WiFi Pineapple · build in progress",
-  },
-  {
-    n: "05",
-    year: "Now · 2026",
-    name: "Abandoned Train Line Cart",
-    cat: "Woodwork · Hardware",
-    desc: "Designing and manufacturing a cart that is meant to run on abandoned Irish train lines.",
-    tag: "Woodwork · Hardware",
-    link: "Build log →",
-    size: "s-6",
-    image: "/assets/train-cart.png",
-    label: "Cart · workshop progress",
+    image: "/assets/galaksija.jpg",
+    label: "Galaksija · build in progress",
   },
 ];
 
 const COMPLETED_PROJECTS: Project[] = [
   {
-    n: "06",
+    n: "05",
     year: "2026",
     name: "Demos Anon",
     cat: "Demo Night · Talk",
@@ -169,7 +158,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Demos Anon · on stage",
   },
   {
-    n: "07",
+    n: "06",
     year: "2026",
     name: "Pairs Trading AAPL & SPY",
     cat: "Quant · Statistical Arbitrage",
@@ -182,7 +171,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Pairs Trading · AAPL / SPY",
   },
   {
-    n: "08",
+    n: "07",
     year: "2025",
     name: "Ventria",
     cat: "Health · Apple Watch",
@@ -195,7 +184,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Medathon · 27 Feb 2026",
   },
   {
-    n: "09",
+    n: "08",
     year: "2025",
     name: "UCDFS",
     cat: "Formula Student",
@@ -209,7 +198,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "UCDFS · Silverstone, E135",
   },
   {
-    n: "10",
+    n: "09",
     year: "2026",
     name: "ExamEasy",
     cat: "AI Tutor · Leaving Cert",
@@ -222,7 +211,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "ExamEasy · all subjects",
   },
   {
-    n: "11",
+    n: "10",
     year: "2026",
     name: "Braille Reader",
     cat: "Accessibility",
@@ -234,7 +223,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Braille Reader · prototype",
   },
   {
-    n: "12",
+    n: "11",
     year: "2024",
     name: "Model Jet Engine",
     cat: "Workshop · Hands-on",
@@ -246,7 +235,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Jet engine v1 · scrap-built",
   },
   {
-    n: "13",
+    n: "12",
     year: "2026",
     name: "Movinnit.ai",
     cat: "AI · Relocation",
@@ -259,7 +248,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Movinnit.ai",
   },
   {
-    n: "14",
+    n: "13",
     year: "2024",
     name: "Solid Works IDE",
     cat: "Shelved · Cloud Tooling",
@@ -272,7 +261,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "SolidWorks · IDE",
   },
   {
-    n: "15",
+    n: "14",
     year: "2023",
     name: "Vex V5 Robotics",
     cat: "Competition Robotics",
@@ -285,7 +274,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/vex-v5.png",
   },
   {
-    n: "16",
+    n: "15",
     year: "2023",
     name: "Dukes Schools Competition",
     cat: "Best Engineered Solution",
@@ -295,7 +284,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Dukes · winners' stage",
   },
   {
-    n: "17",
+    n: "16",
     year: "2024",
     name: "Build Space S5",
     cat: "Nights & Weekends",
@@ -307,7 +296,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Buildspace · S5",
   },
   {
-    n: "18",
+    n: "17",
     year: "2023",
     name: "TDI Challenge",
     cat: "Signing Glove",
@@ -320,7 +309,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "Signing glove · CAD",
   },
   {
-    n: "19",
+    n: "18",
     year: "2023",
     name: "TEDI London",
     cat: "Eco Lotus · Award",
@@ -332,7 +321,7 @@ const COMPLETED_PROJECTS: Project[] = [
     image: "/assets/eco-lotus.png",
   },
   {
-    n: "20",
+    n: "19",
     year: "2023",
     name: "V6 Engine",
     cat: "CAD Deep-Dive",
@@ -344,7 +333,7 @@ const COMPLETED_PROJECTS: Project[] = [
     label: "V6 · wireframe render",
   },
   {
-    n: "21",
+    n: "20",
     year: "2026",
     name: "Docking Drone",
     cat: "Shelved · Self-Docking Hardware",
@@ -354,6 +343,30 @@ const COMPLETED_PROJECTS: Project[] = [
     shelved: true,
     image: "/assets/vdd.jpg",
     label: "Docking drone · concept",
+  },
+  {
+    n: "21",
+    year: "2026",
+    name: "DIY WiFi Pineapple",
+    cat: "Shelved · Security · WiFi",
+    desc: "A homemade take on the WiFi Pineapple — a wireless-network auditing rig for hands-on, authorised penetration testing and security research.",
+    size: "s-3",
+    shelved: true,
+    image: "/assets/pineapple.jpg",
+    label: "DIY WiFi Pineapple · prototype",
+  },
+  {
+    n: "22",
+    year: "2026",
+    name: "Abandoned Train Line Cart",
+    cat: "Shelved · Woodwork · Hardware",
+    desc: "Designing and manufacturing a cart that is meant to run on abandoned Irish train lines.",
+    tag: "Woodwork · Hardware",
+    link: "Build log →",
+    size: "s-6",
+    shelved: true,
+    image: "/assets/train-cart.png",
+    label: "Cart · workshop progress",
   },
 ];
 
@@ -367,7 +380,7 @@ function AboutSection() {
             <span>Shaurya</span>
             <span className="last">Kapoor.</span>
           </h1>
-          <div className="about-tag">18 y/o builder · Websummit Scholar &apos;25 · Eirspace</div>
+          <div className="about-tag">19 y/o builder · Websummit Scholar &apos;25 · Eirspace</div>
         </div>
 
         <div className="portrait-wrap">
@@ -388,18 +401,17 @@ function AboutSection() {
       <div className="now-card">
         <div className="now-head">
           <div className="now-title">★ Currently Working On</div>
-          <div className="now-date">Updated · September 2026</div>
+          <div className="now-date">Updated · October 2026</div>
         </div>
         <div className="now-body">
-          <p>building rockets for Eirspace,</p>
-          <p>flying an L1 rocket on a flight</p>
-          <p>computer I built myself, and a</p>
-          <p>DIY WiFi Pineapple</p>
+          <p>Building rockets with Eirspace for Eirseds and Mach 27.</p>
+          <p>Flying my L1 rocket on a flight computer I designed myself.</p>
+          <p>Soldering and programming a Galaksija, a 1983 Yugoslav Z80 computer.</p>
         </div>
         <div className="now-tags">
           <span>Eirspace</span>
-          <span>UCDFS</span>
           <span>L1 Rocket</span>
+          <span>Galaksija</span>
           <span>Dublin</span>
         </div>
       </div>

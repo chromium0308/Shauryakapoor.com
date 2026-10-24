@@ -325,7 +325,18 @@ section[id] { scroll-margin-top: 24px; }
   color: var(--ink);
   position: relative;
 }
-.now-card .now-body p { margin: 0 0 6px; }
+.now-card .now-body p {
+  margin: 0;
+  line-height: 28px;
+  padding-left: 1.2em;
+  position: relative;
+}
+.now-card .now-body p::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--maroon);
+}
 .now-card .now-tags {
   margin-top: 18px;
   display: flex; gap: 8px; flex-wrap: wrap;
