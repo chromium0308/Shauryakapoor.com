@@ -13,6 +13,15 @@ type ExperienceItem = {
 
 const EXPERIENCE: ExperienceItem[] = [
   {
+    when: "Oct 2026 — Present",
+    sub: "B.Sc · TUM",
+    role: "Aerospace",
+    company: "Technische Universität München",
+    desc: "Studying Aerospace at TUM in Munich, one of Europe's top engineering universities, and carrying the rockets, avionics and side-projects along with me.",
+    stamp: "Student",
+    sub2: "TUM · '26–",
+  },
+  {
     when: "Jan 2026 — Jun 2026",
     sub: "Internship · Dublin",
     role: "AI Development Intern",
@@ -67,6 +76,11 @@ const LANGUAGES = [
 ];
 
 const EDUCATION = [
+  {
+    school: "Technische Universität München",
+    degree: "B.Sc Aerospace",
+    when: "Oct 2026 — Present",
+  },
   {
     school: "University College Dublin",
     degree: "Engineering",
@@ -380,7 +394,7 @@ function AboutSection() {
             <span>Shaurya</span>
             <span className="last">Kapoor.</span>
           </h1>
-          <div className="about-tag">19 y/o builder · Websummit Scholar &apos;25 · Eirspace</div>
+          <div className="about-tag">19 y/o builder · BSc Aerospace TUM · Websummit Scholar &apos;25 · Eirspace</div>
         </div>
 
         <div className="portrait-wrap">
@@ -412,7 +426,7 @@ function AboutSection() {
           <span>Eirspace</span>
           <span>L1 Rocket</span>
           <span>Galaksija</span>
-          <span>Dublin</span>
+          <span>Munich</span>
         </div>
       </div>
     </section>
@@ -585,7 +599,7 @@ function Footer() {
     <footer className="footer">
       <span>shauryakapoor.com</span>
       <span>★ Spring 2026 Pressing ★</span>
-      <span>Made by hand · Dublin</span>
+      <span>Made by hand · Munich</span>
     </footer>
   );
 }
